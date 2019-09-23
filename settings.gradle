@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name='Smart_Calendar'
+rootProject.name='My Application'
