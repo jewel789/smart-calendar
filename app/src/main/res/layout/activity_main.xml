@@ -1,48 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
    android:orientation="vertical"
-    android:background="@color/light_green"
+    android:background="@drawable/caledar4"
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="170dp"
+
+        android:id="@+id/CurrentDate"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="Today"
+        android:textColor="#230DEC"
 
         android:textAlignment="center"
         android:textSize="28sp"
         android:textStyle="bold"
-
         />
 
-    <TextView
-        android:layout_width="284dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="@string/Date"
-        android:textAlignment="center"
-        android:textSize="27sp" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/task"
-        android:textSize="24sp"
-        android:textAlignment="center"
-        android:textColor="#0000ff"
-        />
+
+   <LinearLayout
+
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal"
+       android:layout_gravity="center"
+
+       >
+
+       <ImageButton
+           android:id="@+id/taskImage"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_gravity="center_horizontal"
+           android:src="@drawable/task" />
+
+
+       <ImageButton
+           android:id="@+id/addtaskImage"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:src="@drawable/addtask"
+       />
+
+   </LinearLayout>
+
 
     <ListView
-        android:layout_width="333dp"
-        android:layout_height="57dp"
+        android:layout_width="219dp"
+        android:layout_height="3dp" />
 
-        />
+
+    <ListView
+        android:layout_width="78dp"
+        android:layout_height="15dp" />
+
+
+
+
+
+
 
     <Button
+        android:id="@+id/add_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -52,10 +76,15 @@
         android:textColor="#f100ff"
         />
 
+
     <CalendarView
-        android:layout_width="322dp"
-        android:layout_height="331dp"
+        android:id="@+id/Calendar"
+        android:layout_width="326dp"
+        android:layout_height="321dp"
         android:layout_gravity="center_horizontal"
         android:contextClickable="true"
+
         />
+
+
 </LinearLayout>
