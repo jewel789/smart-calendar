@@ -5,86 +5,57 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-   android:orientation="vertical"
-    android:background="@drawable/caledar4"
+    android:orientation="vertical"
+    android:background="@drawable/login_background1"
     tools:context=".MainActivity">
 
-    <TextView
 
-        android:id="@+id/CurrentDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <EditText
+        android:id="@+id/userEmail"
+        android:layout_width="265dp"
+        android:layout_height="50dp"
         android:layout_gravity="center_horizontal"
-        android:textColor="#230DEC"
-
+        android:layout_marginTop="152dp"
+        android:layout_marginBottom="20dp"
+        android:background="#DBDBCB"
+        android:drawableLeft="@drawable/user_mail"
+        android:hint="@string/Enter_Email"
+        android:inputType="textEmailAddress"
+        android:textSize="20sp"
         android:textAlignment="center"
-        android:textSize="28sp"
-        android:textStyle="bold"
+        android:textColor="#1A032B"
+        android:textStyle="italic"
+
         />
 
-
-   <LinearLayout
-
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:orientation="horizontal"
-       android:layout_gravity="center"
-
-       >
-
-       <ImageButton
-           android:id="@+id/taskImage"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:layout_gravity="center_horizontal"
-           android:src="@drawable/task" />
-
-
-       <ImageButton
-           android:id="@+id/addtaskImage"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:src="@drawable/addtask"
-       />
-
-   </LinearLayout>
-
-
-    <ListView
-        android:layout_width="219dp"
-        android:layout_height="3dp" />
-
-
-    <ListView
-        android:layout_width="78dp"
-        android:layout_height="15dp" />
-
-
-
-
+    <EditText
+        android:id="@+id/userPassword"
+        android:layout_width="254dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:background="#DBDBCB"
+        android:drawableLeft="@drawable/password_icon"
+        android:ems="10"
+        android:hint="@string/Enter_password"
+        android:inputType="textPassword"
+        android:textSize="20sp"
+        android:textAlignment="center" />
 
 
 
     <Button
-        android:id="@+id/add_button"
+        android:id="@+id/logIn_button"
+        android:layout_margin="10dp"
+        android:layout_gravity="center_horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="@string/add"
-        android:textAlignment="center"
-        android:textSize="14sp"
-        android:textColor="#f100ff"
+        android:drawableLeft="@drawable/enter_button_icon"
+        android:text="@string/LogInButton"
         />
 
 
-    <CalendarView
-        android:id="@+id/Calendar"
-        android:layout_width="326dp"
-        android:layout_height="321dp"
-        android:layout_gravity="center_horizontal"
-        android:contextClickable="true"
 
-        />
 
 
 </LinearLayout>
