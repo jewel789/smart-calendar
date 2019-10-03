@@ -1,8 +1,13 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Smart Calendar</string>
+    <string name="login_First"> Welcome </string>
+    <string name="Enter_Email">Enter Your  Email</string>
+    <string name="Enter_password"> Enter Your password</string>
+    <string name="LogInButton">LogIn </string>
+
     <string name="Day">TODAY</string>
     <string name="Date"> Date : Month : Year </string>
-    <string name="task"> Tasks : </string>
-    <string name="add">ADD Task</string>
+    <string name="task">Show Task list </string>
+    <string name="add"> ADD Task</string>
 
 </resources>
