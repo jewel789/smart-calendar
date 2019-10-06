@@ -1,13 +1,19 @@
 <resources>
     <string name="app_name">Smart Calendar</string>
-    <string name="login_First"> Welcome </string>
-    <string name="Enter_Email">Enter Your  Email</string>
-    <string name="Enter_password"> Enter Your password</string>
-    <string name="LogInButton">LogIn </string>
 
     <string name="Day">TODAY</string>
     <string name="Date"> Date : Month : Year </string>
     <string name="task">Show Task list </string>
     <string name="add"> ADD Task</string>
+
+    <string name="login_First"> Welcome </string>
+    <string name="Enter_Email">Enter Your  Email</string>
+    <string name="Enter_password"> Enter Your password</string>
+    <string name="sign_up">sign up</string>
+    <string name="sign_in">Already Signed Up? Login Now</string>
+    <string name="login">Login</string>
+    <string name="signuppage">Don\'t have an account? Sign up here</string>
+    <string name="login_page">Login Page</string>
+    <string name="sign_up_page">SIGN UP</string>
 
 </resources>

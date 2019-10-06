@@ -10,18 +10,18 @@
 
 
     <TextView
-        android:id="@+id/SignUpPage"
+        android:id="@+id/SignInPage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:text="@string/sign_up_page"
+        android:text="@string/login_page"
         android:textAlignment="center"
         android:textColor="#009688"
         android:textSize="24sp"
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/signUpEmail"
+        android:id="@+id/signInEmail"
         android:layout_width="265dp"
         android:layout_height="50dp"
         android:layout_gravity="center_horizontal"
@@ -37,7 +37,7 @@
         android:textStyle="italic" />
 
     <EditText
-        android:id="@+id/signUpPassword"
+        android:id="@+id/signInPassword"
         android:layout_width="254dp"
         android:layout_height="48dp"
         android:layout_gravity="center_horizontal"
@@ -51,21 +51,21 @@
         android:textAlignment="center" />
 
     <Button
-        android:id="@+id/signUp"
+        android:id="@+id/signIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_margin="10dp"
         android:drawableStart="@drawable/enter_button_icon"
-        android:text="@string/sign_up" />
+        android:text="@string/login" />
 
     <TextView
-        android:id="@+id/signInInstead"
+        android:id="@+id/signUpInstead"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:clickable="true"
         android:focusable="true"
-        android:text="@string/sign_in"
+        android:text="@string/signuppage"
         android:textAlignment="center"
         android:textColor="#FFEB3B"
         android:textStyle="italic" />
