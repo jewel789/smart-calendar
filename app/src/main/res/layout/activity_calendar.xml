@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/layout_login"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/caledar4"
-    >
-
+    android:background="@drawable/calendar1">
 
 
     <TextView
@@ -15,57 +14,71 @@
         android:id="@+id/CurrentDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:textColor="#230DEC"
 
         android:textAlignment="center"
+        android:textColor="#230DEC"
+
         android:textSize="28sp"
         android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="188dp" />
 
-        />
 
-
-    <LinearLayout
-
+    <Button
+        android:id="@+id/taskImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="48dp"
+        android:drawableStart="@drawable/task"
+        android:src="@drawable/task"
+        android:text="@string/task"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        >
-
-        <Button
-            android:id="@+id/taskImage"
-            android:layout_marginRight="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:drawableLeft="@drawable/task"
-            android:src="@drawable/task"
-            android:text="@string/task"
-            />
-
-
-        <Button
-            android:id="@+id/addtaskImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/add_task_icon"
-            android:text="@string/add"
-            />
-
-    </LinearLayout>
-
+    <Button
+        android:id="@+id/addtaskImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="48dp"
+        android:drawableStart="@drawable/add_task_icon"
+        android:text="@string/add"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/taskImage"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <CalendarView
         android:id="@+id/Calendar"
-        android:layout_marginTop="5dp"
-        android:layout_width="326dp"
-        android:layout_height="321dp"
-        android:layout_gravity="center_horizontal"
-        android:contextClickable="true"
+        android:layout_width="345dp"
+        android:layout_height="393dp"
 
-        />
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.588"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/taskImage"
+        app:layout_constraintVertical_bias="0.055" />
+
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="292dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="68dp"
+        android:text="@string/logout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.032"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Calendar"
+        app:layout_constraintVertical_bias="0.03" />
 
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

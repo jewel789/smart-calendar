@@ -34,10 +34,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         firebaseAuth = FirebaseAuth.getInstance();
 
-        /*if(firebaseAuth.getCurrentUser() != null) {
+        if(firebaseAuth.getCurrentUser() != null) {
             finish();
             startActivity(new Intent(getApplicationContext(), CalendarActivity.class));
-        }*/
+        }
 
         txtMail = findViewById(R.id.signUpEmail);
         txtPass = findViewById(R.id.signUpPassword);
