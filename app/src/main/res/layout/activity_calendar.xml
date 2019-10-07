@@ -25,7 +25,7 @@
 
 
     <Button
-        android:id="@+id/taskImage"
+        android:id="@+id/allTasks"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
@@ -37,7 +37,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/addtaskImage"
+        android:id="@+id/addTask"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
@@ -46,7 +46,7 @@
         android:text="@string/add"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/taskImage"
+        app:layout_constraintStart_toEndOf="@+id/allTasks"
         app:layout_constraintTop_toTopOf="parent" />
 
     <CalendarView
@@ -62,7 +62,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.588"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/taskImage"
+        app:layout_constraintTop_toBottomOf="@+id/allTasks"
         app:layout_constraintVertical_bias="0.055" />
 
     <Button
