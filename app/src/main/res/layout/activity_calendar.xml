@@ -28,7 +28,7 @@
         android:id="@+id/allTasks"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="48dp"
         android:drawableStart="@drawable/task"
         android:src="@drawable/task"
@@ -40,45 +40,36 @@
         android:id="@+id/addTask"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
         android:layout_marginTop="48dp"
+        android:layout_marginEnd="28dp"
         android:drawableStart="@drawable/add_task_icon"
         android:text="@string/add"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.913"
         app:layout_constraintStart_toEndOf="@+id/allTasks"
         app:layout_constraintTop_toTopOf="parent" />
 
     <CalendarView
         android:id="@+id/Calendar"
-        android:layout_width="345dp"
-        android:layout_height="393dp"
+        android:layout_width="333dp"
+        android:layout_height="350dp"
 
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="32dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.588"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/allTasks"
-        app:layout_constraintVertical_bias="0.055" />
+        app:layout_constraintTop_toBottomOf="@+id/allTasks" />
 
     <Button
         android:id="@+id/logout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="292dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="68dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="32dp"
         android:text="@string/logout"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.032"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Calendar"
-        app:layout_constraintVertical_bias="0.03" />
+        app:layout_constraintTop_toBottomOf="@+id/Calendar" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

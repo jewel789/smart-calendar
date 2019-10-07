@@ -33,10 +33,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         firebaseAuth = FirebaseAuth.getInstance();
 
-        /*if(firebaseAuth.getCurrentUser() != null) {
+        if(firebaseAuth.getCurrentUser() != null) {
             finish();
             startActivity(new Intent(getApplicationContext(), CalendarActivity.class));
-        }*/
+        }
 
         loginButton = findViewById(R.id.signIn);
         txtEmail = findViewById(R.id.signInEmail);
@@ -47,7 +47,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         signup.setOnClickListener(this);
     }
 
-    private void userlogin() {
+    private void userLogin() {
         String email = txtEmail.getText().toString().trim();
         String password = txtPassword.getText().toString().trim();
 
@@ -80,7 +80,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View view) {
         if(view == loginButton) {
-            userlogin();
+            userLogin();
         }
 
         if(view == signup) {
