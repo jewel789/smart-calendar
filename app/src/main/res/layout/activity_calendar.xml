@@ -1,75 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/layout_login"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/calendar1">
-
-
-    <TextView
-
-        android:id="@+id/CurrentDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:textAlignment="center"
-        android:textColor="#230DEC"
-
-        android:textSize="28sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="188dp" />
-
+    android:orientation="vertical"
+    android:background="@drawable/calendar1"
+    tools:context=".CalendarActivity">
 
     <Button
         android:id="@+id/allTasks"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
         android:layout_marginTop="48dp"
+        android:layout_marginStart="28dp"
         android:drawableStart="@drawable/task"
-        android:src="@drawable/task"
-        android:text="@string/task"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="@string/task" />
 
     <Button
         android:id="@+id/addTask"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
         android:layout_marginTop="48dp"
-        android:layout_marginEnd="28dp"
         android:drawableStart="@drawable/add_task_icon"
-        android:text="@string/add"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.913"
-        app:layout_constraintStart_toEndOf="@+id/allTasks"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="@string/add" />
+
 
     <CalendarView
         android:id="@+id/Calendar"
         android:layout_width="333dp"
-        android:layout_height="350dp"
+        android:layout_height="250dp"
 
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/allTasks" />
+        android:layout_marginEnd="24dp" />
 
     <Button
         android:id="@+id/logout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="32dp"
-        android:text="@string/logout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Calendar" />
+        android:layout_marginTop="48dp"
+        android:layout_marginStart="28dp"
+        android:text="@string/logout" />
 
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
