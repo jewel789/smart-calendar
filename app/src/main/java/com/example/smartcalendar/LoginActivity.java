@@ -22,7 +22,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private Button loginButton;
     private EditText txtEmail;
     private EditText txtPassword;
-    private TextView signup;
+    private TextView signUp;
 
     private FirebaseAuth firebaseAuth;
 
@@ -35,16 +35,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         if(firebaseAuth.getCurrentUser() != null) {
             finish();
-            startActivity(new Intent(getApplicationContext(), CalendarActivity.class));
+            startActivity(new Intent(this, CalendarActivity.class));
         }
 
         loginButton = findViewById(R.id.signIn);
         txtEmail = findViewById(R.id.signInEmail);
         txtPassword = findViewById(R.id.signInPassword);
-        signup = findViewById(R.id.signUpInstead);
+        signUp = findViewById(R.id.signUpInstead);
 
         loginButton.setOnClickListener(this);
-        signup.setOnClickListener(this);
+        signUp.setOnClickListener(this);
     }
 
     private void userLogin() {
@@ -66,7 +66,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()) {
-                            Toast.makeText(LoginActivity.this, "Logged IN", Toast.LENGTH_LONG).show();
                             finish();
                             startActivity(new Intent(getApplicationContext(), CalendarActivity.class));
                         }
@@ -83,7 +82,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             userLogin();
         }
 
-        if(view == signup) {
+        if(view == signUp) {
             finish();
             startActivity(new Intent(this, MainActivity.class));
         }

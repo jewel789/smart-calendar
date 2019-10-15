@@ -22,8 +22,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private EditText txtMail;
     private EditText txtPass;
-    private Button signup;
-    private TextView signin;
+    private Button signUp;
+    private TextView signIn;
 
     private FirebaseAuth firebaseAuth;
 
@@ -41,11 +41,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         txtMail = findViewById(R.id.signUpEmail);
         txtPass = findViewById(R.id.signUpPassword);
-        signup = findViewById(R.id.signUp);
-        signin = findViewById(R.id.signInInstead);
+        signUp = findViewById(R.id.signUp);
+        signIn = findViewById(R.id.signInInstead);
 
-        signup.setOnClickListener(this);
-        signin.setOnClickListener(this);
+        signUp.setOnClickListener(this);
+        signIn.setOnClickListener(this);
     }
 
     private void registerAccount() {
@@ -67,9 +67,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()) {
-                            Toast.makeText(MainActivity.this, "Account Registerd", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity.this, "Account Registered", Toast.LENGTH_SHORT).show();
                             finish();
-                            startActivity(new Intent(getApplicationContext(), CalendarActivity.class));
+                            startActivity(new Intent(getApplicationContext(), AccountActivity.class));
                         }
                         else {
                             Toast.makeText(MainActivity.this, "Registration Unsuccessful", Toast.LENGTH_SHORT).show();
@@ -80,10 +80,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-        if(view == signup) {
+        if(view == signUp) {
             registerAccount();
         }
-        if(view == signin) {
+        if(view == signIn) {
             finish();
             startActivity(new Intent(this, LoginActivity.class));
         }
