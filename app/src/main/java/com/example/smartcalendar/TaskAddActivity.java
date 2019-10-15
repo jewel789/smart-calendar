@@ -2,6 +2,7 @@ package com.example.smartcalendar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.media.audiofx.AcousticEchoCanceler;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.text.TextUtils;
@@ -17,18 +18,24 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class TaskAddActivity extends AppCompatActivity implements View.OnClickListener {
 
+    private FirebaseAuth firebaseAuth;
+    private FirebaseUser user;
+    private DatabaseReference databaseReference;
+
     private EditText taskName;
     private Button addTaskButton;
-    private FirebaseAuth firebaseAuth;
-    private DatabaseReference databaseReference;
+
+    private Account account;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task_add);
 
-        firebaseAuth = FirebaseAuth.getInstance();
+        account = (Account) getIntent().getSerializableExtra("account");
 
+        firebaseAuth = FirebaseAuth.getInstance();
+        user = firebaseAuth.getCurrentUser();
         databaseReference = FirebaseDatabase.getInstance().getReference();
 
         taskName = findViewById(R.id.taskName);
@@ -43,8 +50,9 @@ public class TaskAddActivity extends AppCompatActivity implements View.OnClickLi
             String name = taskName.getText().toString().trim();
             if(!TextUtils.isEmpty(name)) {
                 Task task = new Task(name);
-                FirebaseUser user = firebaseAuth.getCurrentUser();
-                databaseReference.child(user.getUid()).setValue(task);
+                account.addTask();
+                databaseReference.child(user.getUid()).child("taskcount").setValue(account.getTaskcount());
+                databaseReference.child(user.getUid()).child("tasks/task" + account.getTaskcount()).setValue(task);
                 Toast.makeText(this, "Task added & saved", Toast.LENGTH_LONG).show();
                 finish();
             }

@@ -16,5 +16,8 @@
     <string name="login_page">Login Page</string>
     <string name="sign_up_page">SIGN UP</string>
     <string name="logout">Logout</string>
+    <string name="enter_name">Enter Name:</string>
+    <string name="accountContinue">Continue</string>
+    <string name="enter_age">Enter Age:</string>
 
 </resources>
