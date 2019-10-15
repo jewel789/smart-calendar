@@ -17,6 +17,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+
 public class CalendarActivity extends AppCompatActivity implements View.OnClickListener {
 
     private FirebaseAuth firebaseAuth;
@@ -41,6 +43,8 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
             startActivity(new Intent(this, LoginActivity.class));
         }
 
+        account = new Account();
+
         user = firebaseAuth.getCurrentUser();
         databaseReference = FirebaseDatabase.getInstance().getReference();
         databaseReference.addValueEventListener(new ValueEventListener() {
@@ -55,7 +59,7 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
             }
         });
 
-        //Toast.makeText(this, "Welcome " + user.getEmail(), Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Welcome " + user.getEmail(), Toast.LENGTH_LONG).show();
 
         logoutButton = findViewById(R.id.logout);
         addTaskButton = findViewById(R.id.addTask);
@@ -64,14 +68,24 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
         logoutButton.setOnClickListener(this);
         addTaskButton.setOnClickListener(this);
         allTasksButton.setOnClickListener(this);
+
     }
 
     private void showData(DataSnapshot ds) {
-        account = new Account();
         account.setName(ds.child(user.getUid()).getValue(Account.class).getName());
         account.setAge(ds.child(user.getUid()).getValue(Account.class).getAge());
         account.setTaskcount(ds.child(user.getUid()).getValue(Account.class).getTaskcount());
-        Toast.makeText(this, "Welcome " + account.getName() + " (Aged : " + account.getAge() + ")", Toast.LENGTH_LONG).show();
+        //Toast.makeText(this, string, Toast.LENGTH_LONG).show();
+
+        ArrayList <Task> allTasks = new ArrayList<>();
+        for (int i = 1; i <= account.getTaskcount(); i++) {
+            Task task = new Task();
+            //System.out.println(i);
+            task.setName(ds.child(user.getUid()).child("tasks/task" + i).getValue(Task.class).getName());
+            allTasks.add(task);
+            //Toast.makeText(this, task.getName(), Toast.LENGTH_LONG).show();
+        }
+        account.setAllTasks(allTasks);
     }
 
     @Override
@@ -86,6 +100,12 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
 
         if(view == addTaskButton) {
             Intent intent = new Intent(this, TaskAddActivity.class);
+            intent.putExtra("account", account);
+            startActivity(intent);
+        }
+
+        if(view == allTasksButton) {
+            Intent intent = new Intent(this, ShowTasksActivity.class);
             intent.putExtra("account", account);
             startActivity(intent);
         }

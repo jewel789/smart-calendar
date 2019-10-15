@@ -1,7 +1,11 @@
 package com.example.smartcalendar;
 
-public class Task {
+import java.io.Serializable;
+
+public class Task implements Serializable {
     private String name;
+
+    public Task() {}
 
     public Task(String name) {
         this.name = name;

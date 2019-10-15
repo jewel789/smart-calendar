@@ -1,11 +1,14 @@
 package com.example.smartcalendar;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Account implements Serializable {
     private String name;
     private int age;
     private int taskCount;
+
+    private ArrayList <Task> allTasks = new ArrayList<>();
 
     public Account() {}
 
@@ -45,11 +48,26 @@ public class Account implements Serializable {
         this.taskCount = taskCount;
     }
 
-    public void addTask() {
+    public void addTask(Task task) {
+        this.allTasks.add(task);
         this.taskCount++;
     }
 
     public void delTask() {
         this.taskCount--;
     }
+
+    public ArrayList<Task> getAllTasks() {
+        return allTasks;
+    }
+
+    public void setAllTasks(ArrayList<Task> allTasks) {
+        this.allTasks = allTasks;
+    }
+
+    public void emptyTasks() {
+        this.allTasks.clear();
+        this.taskCount = 0;
+    }
+
 }

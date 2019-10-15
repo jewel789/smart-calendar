@@ -2,9 +2,7 @@ package com.example.smartcalendar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.media.audiofx.AcousticEchoCanceler;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -50,9 +48,8 @@ public class TaskAddActivity extends AppCompatActivity implements View.OnClickLi
             String name = taskName.getText().toString().trim();
             if(!TextUtils.isEmpty(name)) {
                 Task task = new Task(name);
-                account.addTask();
-                databaseReference.child(user.getUid()).child("taskcount").setValue(account.getTaskcount());
-                databaseReference.child(user.getUid()).child("tasks/task" + account.getTaskcount()).setValue(task);
+                databaseReference.child(user.getUid()).child("tasks/task" + (account.getTaskcount() + 1)).setValue(task);
+                databaseReference.child(user.getUid()).child("taskcount").setValue(account.getTaskcount() + 1);
                 Toast.makeText(this, "Task added & saved", Toast.LENGTH_LONG).show();
                 finish();
             }
