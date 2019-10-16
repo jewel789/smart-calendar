@@ -19,5 +19,6 @@
     <string name="enter_name">Enter Name:</string>
     <string name="accountContinue">Continue</string>
     <string name="enter_age">Enter Age:</string>
+    <string name="add_task_page">Add Task Page</string>
 
 </resources>
