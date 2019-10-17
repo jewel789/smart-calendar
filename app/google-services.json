@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "922139933174",
+    "firebase_url": "https://smartcalendar-21a1e.firebaseio.com",
+    "project_id": "smartcalendar-21a1e",
+    "storage_bucket": "smartcalendar-21a1e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:922139933174:android:554e975732cae183146fd7",
+        "android_client_info": {
+          "package_name": "com.example.smartcalendar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "922139933174-avu2b3o2799lb482lt2o12nq5ojh3ui6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.smartcalendar",
+            "certificate_hash": "ce546ec8b0a05387955ee11ee6e177286ecfb8bc"
+          }
+        },
+        {
+          "client_id": "922139933174-qushriipvsl02hsdredjpjvu5u3v12lt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBsbp4sQ7zFoZmHboYlBP8QG_6kjy8Uvm8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "922139933174-qushriipvsl02hsdredjpjvu5u3v12lt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

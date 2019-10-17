@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/login_background1"
+    tools:context=".LoginActivity">
+
+
+    <TextView
+        android:id="@+id/SignInPage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text="@string/login_page"
+        android:textAlignment="center"
+        android:textColor="#009688"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/signInEmail"
+        android:layout_width="265dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="152dp"
+        android:layout_marginBottom="20dp"
+        android:background="#DBDBCB"
+        android:drawableStart="@drawable/user_mail"
+        android:hint="@string/Enter_Email"
+        android:inputType="textEmailAddress"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:textColor="#1A032B"
+        android:textStyle="italic" />
+
+    <EditText
+        android:id="@+id/signInPassword"
+        android:layout_width="254dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:background="#DBDBCB"
+        android:drawableStart="@drawable/password_icon"
+        android:ems="10"
+        android:hint="@string/Enter_password"
+        android:inputType="textPassword"
+        android:textSize="20sp"
+        android:textAlignment="center" />
+
+    <Button
+        android:id="@+id/signIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10dp"
+        android:drawableStart="@drawable/enter_button_icon"
+        android:text="@string/login" />
+
+    <TextView
+        android:id="@+id/signUpInstead"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/signuppage"
+        android:textAlignment="center"
+        android:textColor="#FFEB3B"
+        android:textStyle="italic" />
+
+</LinearLayout>

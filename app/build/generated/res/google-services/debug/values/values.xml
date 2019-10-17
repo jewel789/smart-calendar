@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">922139933174-qushriipvsl02hsdredjpjvu5u3v12lt.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://smartcalendar-21a1e.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">922139933174</string>
+    <string name="google_api_key" translatable="false">AIzaSyBsbp4sQ7zFoZmHboYlBP8QG_6kjy8Uvm8</string>
+    <string name="google_app_id" translatable="false">1:922139933174:android:554e975732cae183146fd7</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBsbp4sQ7zFoZmHboYlBP8QG_6kjy8Uvm8</string>
+    <string name="google_storage_bucket" translatable="false">smartcalendar-21a1e.appspot.com</string>
+    <string name="project_id" translatable="false">smartcalendar-21a1e</string>
+</resources>

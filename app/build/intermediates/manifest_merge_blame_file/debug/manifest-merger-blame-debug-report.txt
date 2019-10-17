@@ -1,0 +1,156 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.smartcalendar"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="19"
+8-->C:\Users\User\AndroidStudioProjects\smart-calendar\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="29" />
+9-->C:\Users\User\AndroidStudioProjects\smart-calendar\app\src\main\AndroidManifest.xml
+10
+11    <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
+12    <!-- <uses-sdk android:minSdkVersion="14"/> -->
+13    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+13-->[com.google.firebase:firebase-database:19.1.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\17cec60889de556f1129da6a81ba7b86\firebase-database-19.1.0\AndroidManifest.xml:25:5-79
+13-->[com.google.firebase:firebase-database:19.1.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\17cec60889de556f1129da6a81ba7b86\firebase-database-19.1.0\AndroidManifest.xml:25:22-76
+14    <uses-permission android:name="android.permission.INTERNET" />
+14-->[com.google.firebase:firebase-database:19.1.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\17cec60889de556f1129da6a81ba7b86\firebase-database-19.1.0\AndroidManifest.xml:26:5-67
+14-->[com.google.firebase:firebase-database:19.1.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\17cec60889de556f1129da6a81ba7b86\firebase-database-19.1.0\AndroidManifest.xml:26:22-64
+15
+16    <application
+16-->C:\Users\User\AndroidStudioProjects\smart-calendar\app\src\main\AndroidManifest.xml:5:5-35:19
+17        android:allowBackup="true"
+17-->C:\Users\User\AndroidStudioProjects\smart-calendar\app\src\main\AndroidManifest.xml:6:9-35
+18        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+18-->[androidx.core:core:1.1.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\56b6cdfbd80af409835a31a4470c49f0\core-1.1.0\AndroidManifest.xml:24:18-86
+19        android:debuggable="true"
+20        android:icon="@mipmap/ic_launcher"
+20-->C:\Users\User\AndroidStudioProjects\smart-calendar\app\src\main\AndroidManifest.xml:7:9-43
+21        android:label="@string/app_name"
+21-->C:\Users\User\AndroidStudioProjects\smart-calendar\app\src\main\AndroidManifest.xml:8:9-41
+22        android:roundIcon="@mipmap/ic_launcher_round"
+22-->C:\Users\User\AndroidStudioProjects\smart-calendar\app\src\main\AndroidManifest.xml:9:9-54
+23        android:supportsRtl="true"
+23-->C:\Users\User\AndroidStudioProjects\smart-calendar\app\src\main\AndroidManifest.xml:10:9-35
+24        android:testOnly="true"
+25        android:theme="@style/AppTheme" >
+25-->C:\Users\User\AndroidStudioProjects\smart-calendar\app\src\main\AndroidManifest.xml:11:9-40
+26        <activity android:name="com.example.smartcalendar.MainActivity" >
+26-->C:\Users\User\AndroidStudioProjects\smart-calendar\app\src\main\AndroidManifest.xml:12:9-23:20
+26-->C:\Users\User\AndroidStudioProjects\smart-calendar\app\src\main\AndroidManifest.xml:12:19-47
+27            <intent-filter>
+27-->C:\Users\User\AndroidStudioProjects\smart-calendar\app\src\main\AndroidManifest.xml:13:13-22:29
+28                <action android:name="android.intent.action.VIEW" />
+28-->C:\Users\User\AndroidStudioProjects\smart-calendar\app\src\main\AndroidManifest.xml:14:17-69
+28-->C:\Users\User\AndroidStudioProjects\smart-calendar\app\src\main\AndroidManifest.xml:14:25-66
+29
+30                <category android:name="android.intent.category.DEFAULT" />
+30-->C:\Users\User\AndroidStudioProjects\smart-calendar\app\src\main\AndroidManifest.xml:16:17-76
+30-->C:\Users\User\AndroidStudioProjects\smart-calendar\app\src\main\AndroidManifest.xml:16:27-73
+31                <category android:name="android.intent.category.BROWSABLE" />
+31-->C:\Users\User\AndroidStudioProjects\smart-calendar\app\src\main\AndroidManifest.xml:17:17-78
+31-->C:\Users\User\AndroidStudioProjects\smart-calendar\app\src\main\AndroidManifest.xml:17:27-75
+32
+33                <data
+33-->C:\Users\User\AndroidStudioProjects\smart-calendar\app\src\main\AndroidManifest.xml:19:17-21:44
+34                    android:host="https"
+34-->C:\Users\User\AndroidStudioProjects\smart-calendar\app\src\main\AndroidManifest.xml:21:21-41
+35                    android:scheme="http" />
+35-->C:\Users\User\AndroidStudioProjects\smart-calendar\app\src\main\AndroidManifest.xml:20:21-42
+36            </intent-filter>
+37        </activity>
+38        <activity android:name="com.example.smartcalendar.AccountActivity" />
+38-->C:\Users\User\AndroidStudioProjects\smart-calendar\app\src\main\AndroidManifest.xml:24:9-53
+38-->C:\Users\User\AndroidStudioProjects\smart-calendar\app\src\main\AndroidManifest.xml:24:19-50
+39        <activity android:name="com.example.smartcalendar.TaskAddActivity" />
+39-->C:\Users\User\AndroidStudioProjects\smart-calendar\app\src\main\AndroidManifest.xml:25:9-53
+39-->C:\Users\User\AndroidStudioProjects\smart-calendar\app\src\main\AndroidManifest.xml:25:19-50
+40        <activity android:name="com.example.smartcalendar.CalendarActivity" />
+40-->C:\Users\User\AndroidStudioProjects\smart-calendar\app\src\main\AndroidManifest.xml:26:9-54
+40-->C:\Users\User\AndroidStudioProjects\smart-calendar\app\src\main\AndroidManifest.xml:26:19-51
+41        <activity android:name="com.example.smartcalendar.LoginActivity" />
+41-->C:\Users\User\AndroidStudioProjects\smart-calendar\app\src\main\AndroidManifest.xml:27:9-51
+41-->C:\Users\User\AndroidStudioProjects\smart-calendar\app\src\main\AndroidManifest.xml:27:19-48
+42        <activity android:name="com.example.smartcalendar.ShowTasksActivity" >
+42-->C:\Users\User\AndroidStudioProjects\smart-calendar\app\src\main\AndroidManifest.xml:28:9-34:20
+42-->C:\Users\User\AndroidStudioProjects\smart-calendar\app\src\main\AndroidManifest.xml:28:19-52
+43            <intent-filter>
+43-->C:\Users\User\AndroidStudioProjects\smart-calendar\app\src\main\AndroidManifest.xml:29:13-33:29
+44                <action android:name="android.intent.action.MAIN" />
+44-->C:\Users\User\AndroidStudioProjects\smart-calendar\app\src\main\AndroidManifest.xml:30:17-69
+44-->C:\Users\User\AndroidStudioProjects\smart-calendar\app\src\main\AndroidManifest.xml:30:25-66
+45
+46                <category android:name="android.intent.category.LAUNCHER" />
+46-->C:\Users\User\AndroidStudioProjects\smart-calendar\app\src\main\AndroidManifest.xml:32:17-77
+46-->C:\Users\User\AndroidStudioProjects\smart-calendar\app\src\main\AndroidManifest.xml:32:27-74
+47            </intent-filter>
+48        </activity>
+49
+50        <service
+50-->[com.google.firebase:firebase-database:19.1.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\17cec60889de556f1129da6a81ba7b86\firebase-database-19.1.0\AndroidManifest.xml:29:9-35:19
+51            android:name="com.google.firebase.components.ComponentDiscoveryService"
+51-->[com.google.firebase:firebase-database:19.1.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\17cec60889de556f1129da6a81ba7b86\firebase-database-19.1.0\AndroidManifest.xml:30:13-84
+52            android:directBootAware="true"
+52-->[com.google.firebase:firebase-common:19.1.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\97ba2a7fe940ab4ba486aab773eee2fc\firebase-common-19.1.0\AndroidManifest.xml:14:13-43
+53            android:exported="false" >
+53-->[com.google.firebase:firebase-database:19.1.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\17cec60889de556f1129da6a81ba7b86\firebase-database-19.1.0\AndroidManifest.xml:31:13-37
+54            <meta-data
+54-->[com.google.firebase:firebase-database:19.1.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\17cec60889de556f1129da6a81ba7b86\firebase-database-19.1.0\AndroidManifest.xml:32:13-34:85
+55                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
+55-->[com.google.firebase:firebase-database:19.1.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\17cec60889de556f1129da6a81ba7b86\firebase-database-19.1.0\AndroidManifest.xml:33:17-109
+56                android:value="com.google.firebase.components.ComponentRegistrar" />
+56-->[com.google.firebase:firebase-database:19.1.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\17cec60889de556f1129da6a81ba7b86\firebase-database-19.1.0\AndroidManifest.xml:34:17-82
+57            <meta-data
+57-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\4bf5ad23fb8b48603baac97e97e245fe\firebase-auth-19.1.0\AndroidManifest.xml:36:13-38:85
+58                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+58-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\4bf5ad23fb8b48603baac97e97e245fe\firebase-auth-19.1.0\AndroidManifest.xml:37:17-109
+59                android:value="com.google.firebase.components.ComponentRegistrar" />
+59-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\4bf5ad23fb8b48603baac97e97e245fe\firebase-auth-19.1.0\AndroidManifest.xml:38:17-82
+60        </service>
+61
+62        <activity
+62-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\4bf5ad23fb8b48603baac97e97e245fe\firebase-auth-19.1.0\AndroidManifest.xml:24:9-31:50
+63            android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
+63-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\4bf5ad23fb8b48603baac97e97e245fe\firebase-auth-19.1.0\AndroidManifest.xml:25:13-85
+64            android:excludeFromRecents="true"
+64-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\4bf5ad23fb8b48603baac97e97e245fe\firebase-auth-19.1.0\AndroidManifest.xml:26:13-46
+65            android:exported="true"
+65-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\4bf5ad23fb8b48603baac97e97e245fe\firebase-auth-19.1.0\AndroidManifest.xml:27:13-36
+66            android:launchMode="singleTask"
+66-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\4bf5ad23fb8b48603baac97e97e245fe\firebase-auth-19.1.0\AndroidManifest.xml:28:13-44
+67            android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN"
+67-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\4bf5ad23fb8b48603baac97e97e245fe\firebase-auth-19.1.0\AndroidManifest.xml:29:13-102
+68            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+68-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\4bf5ad23fb8b48603baac97e97e245fe\firebase-auth-19.1.0\AndroidManifest.xml:30:13-72
+69
+70        <provider
+70-->[com.google.firebase:firebase-common:19.1.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\97ba2a7fe940ab4ba486aab773eee2fc\firebase-common-19.1.0\AndroidManifest.xml:17:9-21:39
+71            android:name="com.google.firebase.provider.FirebaseInitProvider"
+71-->[com.google.firebase:firebase-common:19.1.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\97ba2a7fe940ab4ba486aab773eee2fc\firebase-common-19.1.0\AndroidManifest.xml:18:13-77
+72            android:authorities="com.example.smartcalendar.firebaseinitprovider"
+72-->[com.google.firebase:firebase-common:19.1.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\97ba2a7fe940ab4ba486aab773eee2fc\firebase-common-19.1.0\AndroidManifest.xml:19:13-72
+73            android:exported="false"
+73-->[com.google.firebase:firebase-common:19.1.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\97ba2a7fe940ab4ba486aab773eee2fc\firebase-common-19.1.0\AndroidManifest.xml:20:13-37
+74            android:initOrder="100" />
+74-->[com.google.firebase:firebase-common:19.1.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\97ba2a7fe940ab4ba486aab773eee2fc\firebase-common-19.1.0\AndroidManifest.xml:21:13-36
+75
+76        <activity
+76-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\c6ed24259e187418524151309c91ad64\play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
+77            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+77-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\c6ed24259e187418524151309c91ad64\play-services-base-17.1.0\AndroidManifest.xml:24:13-79
+78            android:exported="false"
+78-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\c6ed24259e187418524151309c91ad64\play-services-base-17.1.0\AndroidManifest.xml:25:13-37
+79            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+79-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\c6ed24259e187418524151309c91ad64\play-services-base-17.1.0\AndroidManifest.xml:26:13-72
+80
+81        <meta-data
+81-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\68932ee58433ac6a9310bb820f662b21\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+82            android:name="com.google.android.gms.version"
+82-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\68932ee58433ac6a9310bb820f662b21\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
+83            android:value="@integer/google_play_services_version" />
+83-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\68932ee58433ac6a9310bb820f662b21\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
+84    </application>
+85
+86</manifest>
