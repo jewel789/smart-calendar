@@ -27,8 +27,8 @@ public class AccountActivity extends AppCompatActivity implements View.OnClickLi
     private EditText accName;
     private EditText accAge;
 
-    DatabaseReference ref;
-
+    private FirebaseUser user;
+    private DatabaseReference ref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,23 +39,8 @@ public class AccountActivity extends AppCompatActivity implements View.OnClickLi
         accName = findViewById(R.id.accountName);
         accAge = findViewById(R.id.accountAge);
 
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        user = FirebaseAuth.getInstance().getCurrentUser();
         ref = FirebaseDatabase.getInstance().getReference(user.getUid());
-
-        ref.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if(dataSnapshot.exists()) {
-                    finish();
-                    startActivity(new Intent(getApplicationContext(), CalendarActivity.class));
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                System.out.println("The read failed: " + databaseError.getCode());
-            }
-        });
 
         accountContinue.setOnClickListener(this);
     }
@@ -77,8 +62,9 @@ public class AccountActivity extends AppCompatActivity implements View.OnClickLi
         Account account = new Account(name, age);
         ref.setValue(account);
 
-        finish();
+        Toast.makeText(getApplicationContext(), "Account Information Saved!", Toast.LENGTH_LONG).show();
         startActivity(new Intent(getApplicationContext(), CalendarActivity.class));
+        finish();
     }
 
     @Override

@@ -29,13 +29,11 @@ public class TaskAddActivity extends AppCompatActivity implements View.OnClickLi
     private Button addTaskButton;
     private TextView datePick,timePick;
 
-    private TimePickerDialog timePickerDialog;
-    private DatePickerDialog datePickerDialog;
-
     private Account account;
 
-    StringBuilder timet =new StringBuilder();
-    StringBuilder datet=new StringBuilder();
+    private StringBuilder timeT = new StringBuilder();
+    private StringBuilder dateT = new StringBuilder();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,8 +47,8 @@ public class TaskAddActivity extends AppCompatActivity implements View.OnClickLi
 
         taskName = findViewById(R.id.taskName);
         addTaskButton = findViewById(R.id.addTaskButton);
-        timePick=findViewById((R.id.pickTime));
-        datePick=findViewById(R.id.pickDate);
+        timePick = findViewById((R.id.pickTime));
+        datePick = findViewById(R.id.pickDate);
 
         timePick.setOnClickListener(this);
         datePick.setOnClickListener(this);
@@ -60,73 +58,75 @@ public class TaskAddActivity extends AppCompatActivity implements View.OnClickLi
 
     @Override
     public void onClick(View view) {
-        String timeString ="\0";
-        String dateString="\0";
 
-        if(view == addTaskButton) {
-            String name   = taskName.getText().toString().trim();
-            if(!TextUtils.isEmpty(name)) {
-                Task task = new Task(timeString,dateString,name);
+        String timeString;
+        String dateString;
 
-                databaseReference.child(user.getUid()).child("tasks/task" + (account.getTaskcount() + 1)).setValue(task);
-                databaseReference.child(user.getUid()).child("taskcount").setValue(account.getTaskcount() + 1);
-                Toast.makeText(this, "Task added & saved", Toast.LENGTH_LONG).show();
-
-                finish();
-            }
-        }
-        if(view== timePick){
+        if(view == timePick){
 
             TimePicker timePicker = new TimePicker(this);
-            timet.replace(0,timet.length(),"\0");
-            // timeString=timePicker.getCurrentHour().toString()+":"+timePicker.getCurrentMinute().toString();
 
-            //  timet.append(timePicker.getCurrentHour() + ":" + timePicker.getCurrentMinute());
+            timeT.replace(0, timeT.length(),"\0");
 
-            timePickerDialog = new TimePickerDialog(this,
+            TimePickerDialog timePickerDialog = new TimePickerDialog(this,
                     new TimePickerDialog.OnTimeSetListener() {
                         @Override
                         public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                            if(hourOfDay<12) timet.append("AM");
-                            else timet.append("PM");
+                            int hour = hourOfDay;
+                            if(hour > 12) hour = hour - 12;
+                            if(hour == 0) hour = 12;
 
-                            timePick.setText(timet.toString());
+                            if(hour < 10) timeT.append("0");
+                            timeT.append(hour).append(":");
 
+                            if(minute < 10) timeT.append("0");
+                            timeT.append(minute);
+
+                            if(hourOfDay < 12) timeT.append(" AM");
+                            else timeT.append(" PM");
+
+                            timePick.setText(timeT.toString());
                         }
                     }, timePicker.getCurrentHour(), timePicker.getCurrentMinute(), false);
 
             timePickerDialog.show();
-            timeString=timet.toString();
         }
-        if(view==datePick){
+
+        if(view == datePick){
             DatePicker datePicker = new DatePicker(this);
             int SelectedDay = datePicker.getDayOfMonth();
             int SelectedMonth = datePicker.getMonth();
             int SelectedYear = datePicker.getYear();
 
-            datePickerDialog = new DatePickerDialog(this,
+            DatePickerDialog datePickerDialog = new DatePickerDialog(this,
 
                     new DatePickerDialog.OnDateSetListener() {
                         @Override
                         public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
 
-                            datePick.setText(  "  " + dayOfMonth + "/" + (month+1 ) + "/" + year);
-                            datet.append(Integer.toString(dayOfMonth)+"/"+Integer.toString(month+1)+"/"+Integer.toString(year));
+                            dateT.append(dayOfMonth).append("/").append(month + 1).append("/").append(year);
+                            datePick.setText(dateT.toString());
                         }
                     }, SelectedYear, SelectedMonth, SelectedDay);
 
 
             datePickerDialog.show();
-            dateString= datet.toString();
         }
 
+        if(view == addTaskButton) {
+            String name = taskName.getText().toString().trim();
+            timeString = timeT.toString();
+            dateString = dateT.toString();
+            if(!TextUtils.isEmpty(name) && !TextUtils.isEmpty(dateString) && !TextUtils.isEmpty(timeString)) {
 
+                Task task = new Task(timeString,dateString,name);
 
-
-
-
-
+                databaseReference.child(user.getUid()).child("tasks/task" + (account.getTaskcount() + 1)).setValue(task);
+                databaseReference.child(user.getUid()).child("taskcount").setValue(account.getTaskcount() + 1);
+                Toast.makeText(this, "Task added & saved", Toast.LENGTH_LONG).show();
+                finish();
+            }
+        }
     }
-
 }
 

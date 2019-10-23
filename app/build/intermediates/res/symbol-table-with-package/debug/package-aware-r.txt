@@ -671,6 +671,7 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable add_task_icon
 drawable addtask
+drawable alarm_icon
 drawable bkrnd2
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
@@ -799,6 +800,7 @@ id addTaskButton
 id addtaskImage
 id adjust_height
 id adjust_width
+id alarmSwitsch
 id alertTitle
 id allTaskMessage
 id allTasks
@@ -823,6 +825,8 @@ id customPanel
 id dark
 id decor_content_parent
 id default_activity_button
+id deleteDoneButton
+id deleteTaskNo
 id dialog_button
 id dimensions
 id direct
@@ -835,6 +839,7 @@ id expand_activities_button
 id expanded_menu
 id forever
 id gone
+id googleSignIn
 id group_divider
 id groups
 id home
@@ -906,8 +911,10 @@ id signInInstead
 id signInPassword
 id signUp
 id signUpEmail
+id signUpEmailAgain
 id signUpInstead
 id signUpPassword
+id signUpPasswordAgain
 id spacer
 id split_action_bar
 id spread
@@ -1013,6 +1020,8 @@ string Date
 string Day
 string Enter_Email
 string Enter_password
+string Repeat_Email
+string Repeat_Password
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
@@ -1081,10 +1090,10 @@ string project_id
 string purple
 string red
 string search_menu_title
+string signUpPage
 string sign_in
 string sign_up
 string sign_up_page
-string signuppage
 string status_bar_notification_info_overflow
 string task
 string yellow

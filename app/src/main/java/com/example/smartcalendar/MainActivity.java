@@ -22,6 +22,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private EditText txtMail;
     private EditText txtPass;
+    private EditText txtMailAgain;
+    private EditText txtPassAgain;
     private Button signUp;
     private TextView signIn;
 
@@ -36,11 +38,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         if(firebaseAuth.getCurrentUser() != null) {
             finish();
-            startActivity(new Intent(getApplicationContext(), AccountActivity.class));
+            Toast.makeText(getApplicationContext(), "Welcome " + firebaseAuth.getCurrentUser().getEmail(), Toast.LENGTH_LONG).show();
+            startActivity(new Intent(getApplicationContext(), CalendarActivity.class));
         }
 
         txtMail = findViewById(R.id.signUpEmail);
         txtPass = findViewById(R.id.signUpPassword);
+        txtMailAgain = findViewById(R.id.signUpEmailAgain);
+        txtPassAgain = findViewById(R.id.signUpPasswordAgain);
         signUp = findViewById(R.id.signUp);
         signIn = findViewById(R.id.signInInstead);
 
@@ -51,6 +56,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void registerAccount() {
         final String email = txtMail.getText().toString().trim();
         final String password = txtPass.getText().toString().trim();
+        final String emailAgain = txtMailAgain.getText().toString().trim();
+        final String passwordAgain = txtPassAgain.getText().toString().trim();
 
         if(TextUtils.isEmpty(email)) {
             Toast.makeText(this, "Please enter a valid email", Toast.LENGTH_SHORT).show();
@@ -62,6 +69,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             return;
         }
 
+        if(TextUtils.isEmpty(emailAgain)) {
+            Toast.makeText(this, "Please repeat your email", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        else if(!email.equals(emailAgain)){
+            Toast.makeText(this, "Emails do not match", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if(TextUtils.isEmpty(passwordAgain)) {
+            Toast.makeText(this, "Please repeat your password", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        else if(!password.equals(passwordAgain)){
+            Toast.makeText(this, "Passwords do not match", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         firebaseAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -69,7 +94,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         if(task.isSuccessful()) {
                             Toast.makeText(MainActivity.this, "Account Registered", Toast.LENGTH_SHORT).show();
                             finish();
-                            startActivity(new Intent(getApplicationContext(), AccountActivity.class));
+                            startActivity(new Intent(getApplicationContext(), CalendarActivity.class));
                         }
                         else {
                             Toast.makeText(MainActivity.this, "Registration Unsuccessful", Toast.LENGTH_SHORT).show();

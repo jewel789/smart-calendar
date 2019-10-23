@@ -12,7 +12,7 @@
     <string name="sign_up">sign up</string>
     <string name="sign_in">Already Signed Up? Login Now</string>
     <string name="login">Login</string>
-    <string name="signuppage">Don\'t have an account? Sign up here</string>
+    <string name="signUpPage">Don\'t have an account? Sign up here</string>
     <string name="login_page">Login Page</string>
     <string name="sign_up_page">SIGN UP</string>
     <string name="logout">Logout</string>
@@ -20,5 +20,7 @@
     <string name="accountContinue">Continue</string>
     <string name="enter_age">Enter Age:</string>
     <string name="add_task_page">Add Task Page</string>
+    <string name="Repeat_Password">Repeat Your Password</string>
+    <string name="Repeat_Email">Repeat Your Email</string>
 
 </resources>

@@ -10,16 +10,16 @@ public class Task implements Serializable {
 
     public  Task(){
 
-     }
+    }
+
     public Task(String time,String date,String name) {
         this.name = name;
         this.Date=date;
         this.Time=time;
     }
 
-
-
     public String getTime() { return Time; }
+
     public void setTime(String time) { this.Time = time; }
 
     public String getDate() {   return Date; }
