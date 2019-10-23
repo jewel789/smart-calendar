@@ -390,6 +390,8 @@
     <string name="Day">TODAY</string>
     <string name="Enter_Email">Enter Your  Email</string>
     <string name="Enter_password"> Enter Your password</string>
+    <string name="Repeat_Email">Repeat Your Email</string>
+    <string name="Repeat_Password">Repeat Your Password</string>
     <string name="abc_action_bar_home_description">Navigate home</string>
     <string name="abc_action_bar_up_description">Navigate up</string>
     <string name="abc_action_menu_overflow_description">More options</string>
@@ -458,10 +460,10 @@
     <string name="purple">#f100ff</string>
     <string name="red">#ff0000</string>
     <string name="search_menu_title">Search</string>
+    <string name="signUpPage">Don\'t have an account? Sign up here</string>
     <string name="sign_in">Already Signed Up? Login Now</string>
     <string name="sign_up">sign up</string>
     <string name="sign_up_page">SIGN UP</string>
-    <string name="signuppage">Don\'t have an account? Sign up here</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="task">Show Task list </string>
     <string name="yellow">#ffff00</string>
@@ -470,7 +472,7 @@
     <style name="Animation.AppCompat.Dialog" parent="Base.Animation.AppCompat.Dialog"/>
     <style name="Animation.AppCompat.DropDownUp" parent="Base.Animation.AppCompat.DropDownUp"/>
     <style name="Animation.AppCompat.Tooltip" parent="Base.Animation.AppCompat.Tooltip"/>
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>

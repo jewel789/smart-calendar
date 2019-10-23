@@ -25,7 +25,7 @@
         android:layout_width="265dp"
         android:layout_height="50dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="152dp"
+        android:layout_marginTop="150dp"
         android:layout_marginBottom="20dp"
         android:background="#DBDBCB"
         android:drawableStart="@drawable/user_mail"
@@ -41,11 +41,41 @@
         android:layout_width="254dp"
         android:layout_height="48dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="7dp"
         android:background="#DBDBCB"
         android:drawableStart="@drawable/password_icon"
         android:ems="10"
         android:hint="@string/Enter_password"
+        android:inputType="textPassword"
+        android:textSize="20sp"
+        android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/signUpEmailAgain"
+        android:layout_width="265dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="20dp"
+        android:background="#DBDBCB"
+        android:drawableStart="@drawable/user_mail"
+        android:hint="@string/Repeat_Email"
+        android:inputType="textEmailAddress"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:textColor="#1A032B"
+        android:textStyle="italic" />
+
+    <EditText
+        android:id="@+id/signUpPasswordAgain"
+        android:layout_width="254dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="7dp"
+        android:background="#DBDBCB"
+        android:drawableStart="@drawable/password_icon"
+        android:ems="10"
+        android:hint="@string/Repeat_Password"
         android:inputType="textPassword"
         android:textSize="20sp"
         android:textAlignment="center" />
@@ -55,7 +85,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_margin="10dp"
+        android:layout_margin="15dp"
         android:drawableStart="@drawable/enter_button_icon"
         android:text="@string/sign_up" />
 

@@ -23,7 +23,6 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
 
     private FirebaseAuth firebaseAuth;
     private FirebaseUser user;
-    private DatabaseReference databaseReference;
 
     private Button logoutButton;
     private Button addTaskButton;
@@ -37,20 +36,26 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
         setContentView(R.layout.activity_calendar);
 
         firebaseAuth = FirebaseAuth.getInstance();
+        user = firebaseAuth.getCurrentUser();
 
         if(firebaseAuth.getCurrentUser() == null) {
             finish();
-            startActivity(new Intent(this, LoginActivity.class));
+            startActivity(new Intent(this, MainActivity.class));
         }
 
         account = new Account();
 
-        user = firebaseAuth.getCurrentUser();
-        databaseReference = FirebaseDatabase.getInstance().getReference();
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference(user.getUid());
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                showData(dataSnapshot);
+                if(dataSnapshot.exists()) {
+                    showData(dataSnapshot);
+                }
+                else {
+                    startActivity(new Intent(getApplicationContext(), AccountActivity.class));
+                    finish();
+                }
             }
 
             @Override
@@ -59,8 +64,6 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
             }
         });
 
-        Toast.makeText(this, "Welcome " + user.getEmail(), Toast.LENGTH_LONG).show();
-
         logoutButton = findViewById(R.id.logout);
         addTaskButton = findViewById(R.id.addTask);
         allTasksButton = findViewById(R.id.allTasks);
@@ -68,22 +71,20 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
         logoutButton.setOnClickListener(this);
         addTaskButton.setOnClickListener(this);
         allTasksButton.setOnClickListener(this);
-
     }
 
     private void showData(DataSnapshot ds) {
-        account.setName(ds.child(user.getUid()).getValue(Account.class).getName());
-        account.setAge(ds.child(user.getUid()).getValue(Account.class).getAge());
-        account.setTaskcount(ds.child(user.getUid()).getValue(Account.class).getTaskcount());
-        //Toast.makeText(this, string, Toast.LENGTH_LONG).show();
+        account.setName(ds.getValue(Account.class).getName());
+        account.setAge(ds.getValue(Account.class).getAge());
+        account.setTaskcount(ds.getValue(Account.class).getTaskcount());
 
         ArrayList <Task> allTasks = new ArrayList<>();
         for (int i = 1; i <= account.getTaskcount(); i++) {
             Task task = new Task();
-            //System.out.println(i);
-            task.setName(ds.child(user.getUid()).child("tasks/task" + i).getValue(Task.class).getName());
+            task.setName(ds.child("tasks/task" + i).getValue(Task.class).getName());
+            task.setTime(ds.child("tasks/task" + i).getValue(Task.class).getTime());
+            task.setDate(ds.child("tasks/task" + i).getValue(Task.class).getDate());
             allTasks.add(task);
-            //Toast.makeText(this, task.getName(), Toast.LENGTH_LONG).show();
         }
         account.setAllTasks(allTasks);
     }

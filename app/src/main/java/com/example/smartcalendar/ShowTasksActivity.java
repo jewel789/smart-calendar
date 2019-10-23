@@ -30,9 +30,7 @@ public class ShowTasksActivity extends AppCompatActivity {
         String string = "";
         ArrayList <Task> tasksList = account.getAllTasks();
         for(int i = 0; i < tasksList.size(); i++) {
-            string += "Task " + (i + 1) + " : " + tasksList.get(i).getTime()+" " +tasksList.get(i).getDate()+tasksList.get(i).getName() + "\n";
-
-
+            string += "Task " + (i + 1) + " : " + tasksList.get(i).getTime() + " - " +tasksList.get(i).getDate() + " - " + tasksList.get(i).getName() + "\n";
         }
         taskBar.setText(string);
     }
