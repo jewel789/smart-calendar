@@ -19,15 +19,24 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Date;
+import java.util.Locale;
+import java.util.Objects;
+
 public class TaskAddActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private FirebaseAuth firebaseAuth;
     private FirebaseUser user;
     private DatabaseReference databaseReference;
 
     private EditText taskName;
     private Button addTaskButton;
-    private TextView datePick,timePick;
+    private TextView datePick, timePick;
 
     private Account account;
 
@@ -41,7 +50,7 @@ public class TaskAddActivity extends AppCompatActivity implements View.OnClickLi
 
         account = (Account) getIntent().getSerializableExtra("account");
 
-        firebaseAuth = FirebaseAuth.getInstance();
+        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
         user = firebaseAuth.getCurrentUser();
         databaseReference = FirebaseDatabase.getInstance().getReference();
 
@@ -66,26 +75,20 @@ public class TaskAddActivity extends AppCompatActivity implements View.OnClickLi
 
             TimePicker timePicker = new TimePicker(this);
 
-            timeT.replace(0, timeT.length(),"\0");
+            timeT = new StringBuilder();
 
             TimePickerDialog timePickerDialog = new TimePickerDialog(this,
                     new TimePickerDialog.OnTimeSetListener() {
                         @Override
                         public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                            int hour = hourOfDay;
-                            if(hour > 12) hour = hour - 12;
-                            if(hour == 0) hour = 12;
-
-                            if(hour < 10) timeT.append("0");
-                            timeT.append(hour).append(":");
-
-                            if(minute < 10) timeT.append("0");
-                            timeT.append(minute);
-
-                            if(hourOfDay < 12) timeT.append(" AM");
-                            else timeT.append(" PM");
-
-                            timePick.setText(timeT.toString());
+                            timeT.append(hourOfDay).append(":").append(minute);
+                            SimpleDateFormat sdf = new SimpleDateFormat("hh:mm", Locale.US);
+                            SimpleDateFormat sdf2 = new SimpleDateFormat("hh:mm a", Locale.US);
+                            try {
+                                timePick.setText(sdf2.format(Objects.requireNonNull(sdf.parse(timeT.toString()))));
+                            } catch (ParseException e) {
+                                e.printStackTrace();
+                            }
                         }
                     }, timePicker.getCurrentHour(), timePicker.getCurrentMinute(), false);
 
@@ -103,7 +106,6 @@ public class TaskAddActivity extends AppCompatActivity implements View.OnClickLi
                     new DatePickerDialog.OnDateSetListener() {
                         @Override
                         public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-
                             dateT.append(dayOfMonth).append("/").append(month + 1).append("/").append(year);
                             datePick.setText(dateT.toString());
                         }
@@ -119,14 +121,41 @@ public class TaskAddActivity extends AppCompatActivity implements View.OnClickLi
             dateString = dateT.toString();
             if(!TextUtils.isEmpty(name) && !TextUtils.isEmpty(dateString) && !TextUtils.isEmpty(timeString)) {
 
-                Task task = new Task(timeString,dateString,name);
+                SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm", Locale.getDefault());
+                Date date = null;
+                try {
+                    date = sdf.parse(dateString + " " + timeString);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+                Task task = new Task(name, date);
 
-                databaseReference.child(user.getUid()).child("tasks/task" + (account.getTaskcount() + 1)).setValue(task);
-                databaseReference.child(user.getUid()).child("taskcount").setValue(account.getTaskcount() + 1);
-                Toast.makeText(this, "Task added & saved", Toast.LENGTH_LONG).show();
-                finish();
+                account.addTask(task);
+
+                updateDB();
             }
         }
     }
+
+
+    void updateDB() {
+
+        ArrayList <Task> allTasks = account.getAllTasks();
+        Collections.sort(allTasks, new dateCmp());
+        for(int i = 0; i < allTasks.size(); i++) {
+            databaseReference.child(user.getUid()).child("tasks/task" + (i + 1)).setValue(allTasks.get(i));
+        }
+        databaseReference.child(user.getUid()).child("taskcount").setValue(account.getTaskcount());
+
+        Toast.makeText(this, "Task added & saved", Toast.LENGTH_LONG).show();
+        finish();
+    }
 }
 
+class dateCmp implements Comparator <Task> {
+
+    @Override
+    public int compare(Task t1, Task t2) {
+        return t1.getDate().compareTo(t2.getDate());
+    }
+}
