@@ -53,7 +53,6 @@ public class Account implements Serializable {
         this.taskCount++;
     }
 
-
     public void delTask() {
         this.taskCount--;
     }
@@ -70,5 +69,4 @@ public class Account implements Serializable {
         this.allTasks.clear();
         this.taskCount = 0;
     }
-
 }

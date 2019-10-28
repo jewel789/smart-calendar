@@ -15,6 +15,30 @@
       },
       "oauth_client": [
         {
+          "client_id": "922139933174-gsplvhn7olgi1j2cbpost9cpie8esd9t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.smartcalendar",
+            "certificate_hash": "cb5aa432c32a5f666870d52b040dce8d806fa3c5"
+          }
+        },
+        {
+          "client_id": "922139933174-174dakempue8a9q5gop2i5erlca2k08h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.smartcalendar",
+            "certificate_hash": "92866b2a85470009c9eb5eb36f2912965bad167c"
+          }
+        },
+        {
+          "client_id": "922139933174-4p0p4rbvv989irad6j8ai0tv3isv8q8d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.smartcalendar",
+            "certificate_hash": "2d81f3aa792554d541bc3d195d9cff0199a14b9b"
+          }
+        },
+        {
           "client_id": "922139933174-avu2b3o2799lb482lt2o12nq5ojh3ui6.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
