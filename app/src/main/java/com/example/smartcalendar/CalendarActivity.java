@@ -50,7 +50,12 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()) {
-                    showData(dataSnapshot);
+                   try{
+                       showData(dataSnapshot);
+                   }
+                   catch (Exception e){
+                       e.printStackTrace();
+                   }
                 }
                 else {
                     startActivity(new Intent(getApplicationContext(), AccountActivity.class));

@@ -731,7 +731,6 @@ drawable user_mail
 id ALT
 id CTRL
 id Calendar
-id CurrentDate
 id FUNCTION
 id META
 id SHIFT
@@ -797,7 +796,6 @@ id activity_chooser_view_content
 id add
 id addTask
 id addTaskButton
-id addtaskImage
 id adjust_height
 id adjust_width
 id alarmSwitsch
@@ -852,7 +850,6 @@ id image
 id info
 id invisible
 id italic
-id layout_login
 id left
 id light
 id line1
