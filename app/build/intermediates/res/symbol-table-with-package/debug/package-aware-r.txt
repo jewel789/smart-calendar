@@ -731,7 +731,6 @@ drawable user_mail
 id ALT
 id CTRL
 id Calendar
-id CurrentDate
 id FUNCTION
 id META
 id SHIFT
@@ -797,12 +796,10 @@ id activity_chooser_view_content
 id add
 id addTask
 id addTaskButton
-id addtaskImage
 id adjust_height
 id adjust_width
 id alarmSwitsch
 id alertTitle
-id allTaskMessage
 id allTasks
 id always
 id async
@@ -825,8 +822,6 @@ id customPanel
 id dark
 id decor_content_parent
 id default_activity_button
-id deleteDoneButton
-id deleteTaskNo
 id dialog_button
 id dimensions
 id direct
@@ -852,14 +847,12 @@ id image
 id info
 id invisible
 id italic
-id layout_login
 id left
 id light
 id line1
 id line3
 id linearLayout
 id linearLayout2
-id linearLayout3
 id listMode
 id list_item
 id logout
@@ -937,7 +930,7 @@ id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
 id taskName
 id taskNameEnter
-id tasksBar
+id tasks_list
 id text
 id text2
 id textSpacerNoButtons
@@ -1096,6 +1089,7 @@ string sign_up
 string sign_up_page
 string status_bar_notification_info_overflow
 string task
+string tasks
 string yellow
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light

@@ -82,8 +82,6 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
         for (int i = 1; i <= account.getTaskcount(); i++) {
             Task task = ds.child("tasks/task" + i).getValue(Task.class);
             //task.setName(ds.child("tasks/task" + i).getValue(Task.class).getName());
-            //task.setTime(ds.child("tasks/task" + i).getValue(Task.class).getTime());
-            //task.setDate(ds.child("tasks/task" + i).getValue(Task.class).getDate());
             allTasks.add(task);
         }
         account.setAllTasks(allTasks);

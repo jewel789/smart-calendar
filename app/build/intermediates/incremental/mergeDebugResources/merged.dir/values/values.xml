@@ -466,6 +466,7 @@
     <string name="sign_up_page">SIGN UP</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="task">Show Task list </string>
+    <string name="tasks">Tasks</string>
     <string name="yellow">#ffff00</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>

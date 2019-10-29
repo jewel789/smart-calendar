@@ -22,5 +22,6 @@
     <string name="add_task_page">Add Task Page</string>
     <string name="Repeat_Password">Repeat Your Password</string>
     <string name="Repeat_Email">Repeat Your Email</string>
+    <string name="tasks">Tasks</string>
 
 </resources>
