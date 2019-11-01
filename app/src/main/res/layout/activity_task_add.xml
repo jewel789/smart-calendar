@@ -21,7 +21,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <TextView
         android:id="@+id/taskNameEnter"
         android:layout_width="wrap_content"
@@ -29,7 +28,7 @@
         android:layout_marginStart="9dp"
         android:layout_marginTop="168dp"
         android:layout_marginEnd="1dp"
-        android:text="Enter Task Name : "
+        android:text="@string/enter_task_name"
         app:layout_constraintEnd_toStartOf="@+id/taskName"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,10 +39,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:importantForAutofill="no"
         android:inputType="textPersonName"
         app:layout_constraintBaseline_toBaselineOf="@+id/taskNameEnter"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/taskNameEnter" />
+        app:layout_constraintStart_toEndOf="@+id/taskNameEnter"
+        tools:ignore="LabelFor" />
 
     <TextView
         android:id="@+id/pickTime"
@@ -51,39 +52,40 @@
         android:layout_height="21dp"
         android:layout_marginTop="268dp"
         android:clickable="true"
-        android:text="pick time"
+        android:text="@string/pick_time"
         android:textAlignment="center"
         app:layout_constraintEnd_toStartOf="@+id/pickDate"
         app:layout_constraintHorizontal_bias="0.929"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:focusable="true" />
 
     <TextView
         android:id="@+id/pickDate"
         android:layout_width="138dp"
         android:layout_height="wrap_content"
         android:clickable="true"
-        android:text="pick Date "
+        android:text="@string/pick_date"
         android:textAlignment="center"
         app:layout_constraintBaseline_toBaselineOf="@+id/pickTime"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/pickTime" />
-
+        app:layout_constraintStart_toEndOf="@+id/pickTime"
+        android:focusable="true" />
 
     <Switch
-        android:id="@+id/alarmSwitsch"
+        android:id="@+id/alarmSwitch"
         android:layout_width="70dp"
         android:layout_height="49dp"
         android:layout_marginTop="64dp"
         android:layout_marginEnd="128dp"
-        android:drawableLeft="@drawable/alarm_icon"
+        android:drawableStart="@drawable/alarm_icon"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/pickDate" />
 
     <Button
-        android:id="@+id/addTaskButton"
+        android:id="@+id/saveTaskButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="160dp"

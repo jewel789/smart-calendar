@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:2:1-26:12
-INJECTED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:2:1-26:12
-INJECTED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:2:1-26:12
-INJECTED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:2:1-26:12
+ADDED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:2:1-27:12
+INJECTED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:2:1-27:12
+INJECTED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:2:1-27:12
+INJECTED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:2:1-27:12
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\ASUS\.gradle\caches\transforms-2\files-2.1\f8ccfb448ba3545203b2c9319e236e39\appcompat-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\ASUS\.gradle\caches\transforms-2\files-2.1\c77d2d7d2a36a76ceff3be3a10064bf2\constraintlayout-1.1.3\AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.firebase:firebase-database:19.2.0] C:\Users\ASUS\.gradle\caches\transforms-2\files-2.1\463da60977420e86b3b59aa784a805a0\firebase-database-19.2.0\AndroidManifest.xml:15:1-38:12
@@ -37,25 +37,25 @@ MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\ASUS\.gradle\
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\ASUS\.gradle\caches\transforms-2\files-2.1\07a10a0cead9a447f78103e8d38f9b9b\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\ASUS\.gradle\caches\transforms-2\files-2.1\5351ba69d53acfbae58340a136c409ac\core-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:firebase-database-collection:17.0.0] C:\Users\ASUS\.gradle\caches\transforms-2\files-2.1\a1c42ee6a43c1fec1cd0f12b759d080b\firebase-database-collection-17.0.0\AndroidManifest.xml:2:1-7:12
-INJECTED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:2:1-26:12
-INJECTED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:2:1-26:12
-INJECTED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:2:1-26:12
+INJECTED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:2:1-27:12
+INJECTED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:2:1-27:12
+INJECTED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:2:1-27:12
 	package
 		ADDED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:3:5-40
 		INJECTED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:2:1-26:12
+		ADDED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:2:1-27:12
 		INJECTED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:2:1-26:12
+		ADDED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:2:1-27:12
 		INJECTED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:5:5-24:19
+ADDED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:5:5-25:19
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\ASUS\.gradle\caches\transforms-2\files-2.1\c77d2d7d2a36a76ceff3be3a10064bf2\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\ASUS\.gradle\caches\transforms-2\files-2.1\c77d2d7d2a36a76ceff3be3a10064bf2\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
 MERGED from [com.google.firebase:firebase-database:19.2.0] C:\Users\ASUS\.gradle\caches\transforms-2\files-2.1\463da60977420e86b3b59aa784a805a0\firebase-database-19.2.0\AndroidManifest.xml:28:5-36:19
@@ -92,40 +92,44 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\AS
 		ADDED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:6:9-35
 	android:theme
 		ADDED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:11:9-40
+activity#com.example.smartcalendar.EditTaskActivity
+ADDED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:12:9-63
+	android:name
+		ADDED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:12:19-51
 activity#com.example.smartcalendar.ShowTasksActivity
-ADDED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:12:9-64
+ADDED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:13:9-55
 	android:name
-		ADDED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:12:19-52
+		ADDED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:13:19-52
 activity#com.example.smartcalendar.AccountActivity
-ADDED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:13:9-53
-	android:name
-		ADDED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:13:19-50
-activity#com.example.smartcalendar.TaskAddActivity
 ADDED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:14:9-53
 	android:name
 		ADDED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:14:19-50
+activity#com.example.smartcalendar.TaskAddActivity
+ADDED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:15:9-53
+	android:name
+		ADDED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:15:19-50
 activity#com.example.smartcalendar.CalendarActivity
-ADDED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:15:9-54
+ADDED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:16:9-54
 	android:name
-		ADDED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:15:19-51
+		ADDED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:16:19-51
 activity#com.example.smartcalendar.LoginActivity
-ADDED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:16:9-51
+ADDED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:17:9-51
 	android:name
-		ADDED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:16:19-48
+		ADDED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:17:19-48
 activity#com.example.smartcalendar.MainActivity
-ADDED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:17:9-23:20
+ADDED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:18:9-24:20
 	android:name
-		ADDED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:17:19-47
+		ADDED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:18:19-47
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:18:13-22:29
+ADDED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:19:13-23:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:19:17-69
+ADDED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:20:17-69
 	android:name
-		ADDED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:19:25-66
+		ADDED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:20:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:21:17-77
+ADDED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:22:17-77
 	android:name
-		ADDED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:21:27-74
+		ADDED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml:22:27-74
 uses-sdk
 INJECTED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\ASUS\Documents\GitHub\smart-calendar\app\src\main\AndroidManifest.xml

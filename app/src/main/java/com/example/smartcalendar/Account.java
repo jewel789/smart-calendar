@@ -6,7 +6,6 @@ import java.util.ArrayList;
 public class Account implements Serializable {
     private String name;
     private int age;
-    private int taskCount;
 
     private ArrayList <Task> allTasks = new ArrayList<>();
 
@@ -15,13 +14,6 @@ public class Account implements Serializable {
     public Account(String name, int age) {
         this.name = name;
         this.age = age;
-        this.taskCount = 0;
-    }
-
-    public Account(String name, int age, int taskCount) {
-        this.name = name;
-        this.age = age;
-        this.taskCount = taskCount;
     }
 
     public String getName() {
@@ -40,21 +32,14 @@ public class Account implements Serializable {
         this.age = age;
     }
 
-    public int getTaskcount() {
-        return taskCount;
-    }
-
-    public void setTaskcount(int taskCount) {
-        this.taskCount = taskCount;
-    }
-
     public void addTask(Task task) {
         this.allTasks.add(task);
-        this.taskCount++;
     }
 
     public void delTask() {
-        this.taskCount--;
+        if(!this.allTasks.isEmpty()) {
+            this.allTasks.remove(0);
+        }
     }
 
     public ArrayList<Task> getAllTasks() {
@@ -67,6 +52,5 @@ public class Account implements Serializable {
 
     public void emptyTasks() {
         this.allTasks.clear();
-        this.taskCount = 0;
     }
 }

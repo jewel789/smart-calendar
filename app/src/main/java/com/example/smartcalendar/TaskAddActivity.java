@@ -22,9 +22,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.Date;
 import java.util.Locale;
 import java.util.Objects;
@@ -55,7 +52,7 @@ public class TaskAddActivity extends AppCompatActivity implements View.OnClickLi
         databaseReference = FirebaseDatabase.getInstance().getReference();
 
         taskName = findViewById(R.id.taskName);
-        addTaskButton = findViewById(R.id.addTaskButton);
+        addTaskButton = findViewById(R.id.saveTaskButton);
         timePick = findViewById((R.id.pickTime));
         datePick = findViewById(R.id.pickDate);
 
@@ -132,30 +129,10 @@ public class TaskAddActivity extends AppCompatActivity implements View.OnClickLi
 
                 account.addTask(task);
 
-                updateDB();
+                databaseReference.child(user.getUid()).setValue(account);
+                Toast.makeText(this, "Task Added Successfully", Toast.LENGTH_SHORT).show();
+                finish();
             }
         }
-    }
-
-
-    void updateDB() {
-
-        ArrayList <Task> allTasks = account.getAllTasks();
-        Collections.sort(allTasks, new dateCmp());
-        for(int i = 0; i < allTasks.size(); i++) {
-            databaseReference.child(user.getUid()).child("tasks/task" + (i + 1)).setValue(allTasks.get(i));
-        }
-        databaseReference.child(user.getUid()).child("taskcount").setValue(account.getTaskcount());
-
-        Toast.makeText(this, "Task added & saved", Toast.LENGTH_LONG).show();
-        finish();
-    }
-}
-
-class dateCmp implements Comparator <Task> {
-
-    @Override
-    public int compare(Task t1, Task t2) {
-        return t1.getDate().compareTo(t2.getDate());
     }
 }

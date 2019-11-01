@@ -23,5 +23,16 @@
     <string name="Repeat_Password">Repeat Your Password</string>
     <string name="Repeat_Email">Repeat Your Email</string>
     <string name="tasks">Tasks</string>
+    <string name="task_no">Task No</string>
+    <string name="delete">Delete</string>
+    <string name="save_task">Save task</string>
+    <string name="choose_new_date">Choose New Date</string>
+    <string name="choose_new_time">Choose New Time</string>
+    <string name="new_task_name">New Task Name :</string>
+    <string name="textView">TextView</string>
+    <string name="pick_date">Pick Date</string>
+    <string name="pick_time">Pick Time</string>
+    <string name="enter_task_name">Enter Task Name :</string>
+    <string name="select_task_for_details">Select Task for Details</string>
 
 </resources>
