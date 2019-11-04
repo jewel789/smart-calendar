@@ -98,6 +98,8 @@ public class TaskAddActivity extends AppCompatActivity implements View.OnClickLi
             int SelectedMonth = datePicker.getMonth();
             int SelectedYear = datePicker.getYear();
 
+            dateT = new StringBuilder();
+
             DatePickerDialog datePickerDialog = new DatePickerDialog(this,
 
                     new DatePickerDialog.OnDateSetListener() {

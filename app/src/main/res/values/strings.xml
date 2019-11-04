@@ -34,5 +34,8 @@
     <string name="pick_time">Pick Time</string>
     <string name="enter_task_name">Enter Task Name :</string>
     <string name="select_task_for_details">Select Task for Details</string>
+    <string name="task_name">Task Name :</string>
+    <string name="task_name_search">Task Name :</string>
+    <string name="search">Search</string>
 
 </resources>
