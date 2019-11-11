@@ -93,7 +93,7 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Ro
 	android:theme
 		ADDED from C:\Users\Rohan\Desktop\app dev\smart-calendar\app\src\main\AndroidManifest.xml:11:9-40
 activity#com.example.smartcalendar.ShowTasksActivity
-ADDED from C:\Users\Rohan\Desktop\app dev\smart-calendar\app\src\main\AndroidManifest.xml:12:9-64
+ADDED from C:\Users\Rohan\Desktop\app dev\smart-calendar\app\src\main\AndroidManifest.xml:12:9-55
 	android:name
 		ADDED from C:\Users\Rohan\Desktop\app dev\smart-calendar\app\src\main\AndroidManifest.xml:12:19-52
 activity#com.example.smartcalendar.AccountActivity

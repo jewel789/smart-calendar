@@ -672,6 +672,7 @@ drawable abc_vector_test
 drawable add_task_icon
 drawable addtask
 drawable alarm_icon
+drawable bg
 drawable bkrnd2
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
@@ -681,6 +682,7 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable button
 drawable calendar1
 drawable calendar2
 drawable common_full_open_on_phone
@@ -702,6 +704,9 @@ drawable common_google_signin_btn_text_light
 drawable common_google_signin_btn_text_light_focused
 drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
+drawable edit_text_bottom
+drawable edit_text_middle
+drawable edit_text_top
 drawable enter_button_icon
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
@@ -735,7 +740,6 @@ id FUNCTION
 id META
 id SHIFT
 id SYM
-id SignInPage
 id SignUpPage
 id TaskAddPage
 id accessibility_action_clickable_span
