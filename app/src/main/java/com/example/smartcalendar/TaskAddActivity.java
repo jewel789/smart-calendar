@@ -137,13 +137,12 @@ public class TaskAddActivity extends AppCompatActivity implements View.OnClickLi
 
 
     void updateDB() {
-
         ArrayList <Task> allTasks = account.getAllTasks();
         Collections.sort(allTasks, new dateCmp());
         for(int i = 0; i < allTasks.size(); i++) {
             databaseReference.child(user.getUid()).child("tasks/task" + (i + 1)).setValue(allTasks.get(i));
         }
-        databaseReference.child(user.getUid()).child("taskcount").setValue(account.getTaskcount());
+        databaseReference.child(user.getUid()).child("taskCount").setValue(account.getTaskCount());
 
         Toast.makeText(this, "Task added & saved", Toast.LENGTH_LONG).show();
         finish();

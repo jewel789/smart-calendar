@@ -81,10 +81,10 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
     private void showData(DataSnapshot ds) {
         account.setName(ds.getValue(Account.class).getName());
         account.setAge(ds.getValue(Account.class).getAge());
-        account.setTaskcount(ds.getValue(Account.class).getTaskcount());
+        account.setTaskCount(ds.getValue(Account.class).getTaskCount());
 
         ArrayList <Task> allTasks = new ArrayList<>();
-        for (int i = 1; i <= account.getTaskcount(); i++) {
+        for (int i = 1; i <= account.getTaskCount(); i++) {
             Task task = ds.child("tasks/task" + i).getValue(Task.class);
             //task.setName(ds.child("tasks/task" + i).getValue(Task.class).getName());
             //task.setTime(ds.child("tasks/task" + i).getValue(Task.class).getTime());

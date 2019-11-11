@@ -40,11 +40,11 @@ public class Account implements Serializable {
         this.age = age;
     }
 
-    public int getTaskcount() {
+    public int getTaskCount() {
         return taskCount;
     }
 
-    public void setTaskcount(int taskCount) {
+    public void setTaskCount(int taskCount) {
         this.taskCount = taskCount;
     }
 
@@ -53,7 +53,8 @@ public class Account implements Serializable {
         this.taskCount++;
     }
 
-    public void delTask() {
+    public void deleteTask(int index) {
+        allTasks.remove(index);
         this.taskCount--;
     }
 
