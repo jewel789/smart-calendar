@@ -13,55 +13,61 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="150dp"
         android:fontFamily="sans-serif"
         android:text="SIGN IN"
         android:textColor="#FFFFFF"
         android:textSize="20sp" />
 
     <EditText
-
-        android:layout_width="265dp"
+        android:id="@+id/signInEmail"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="152dp"
-        android:layout_marginBottom="20dp"
-        android:background="#DBDBCB"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="2dp"
+        android:background="@drawable/edit_text_top"
         android:drawableStart="@drawable/user_mail"
         android:hint="@string/Enter_Email"
         android:inputType="textEmailAddress"
-        android:textSize="20sp"
         android:textAlignment="center"
         android:textColor="#1A032B"
-        android:textStyle="italic" />
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/signInPassword"
-        android:layout_width="254dp"
-        android:layout_height="48dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"
-        android:background="#DBDBCB"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginRight="25dp"
+        android:background="@drawable/edit_text_bottom"
         android:drawableStart="@drawable/password_icon"
         android:ems="10"
         android:hint="@string/Enter_password"
         android:inputType="textPassword"
-        android:textSize="20sp"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/signIn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
         android:layout_gravity="center_horizontal"
-        android:layout_margin="10dp"
-        android:drawableStart="@drawable/enter_button_icon"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="25dp"
+        android:drawableStart="@drawable/button"
         android:text="@string/login" />
 
     <TextView
         android:id="@+id/signUpInstead"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:clickable="true"
         android:focusable="true"
         android:text="@string/signUpPage"
@@ -71,9 +77,11 @@
 
     <com.google.android.gms.common.SignInButton
         android:id="@+id/googleSignIn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="40dp" />
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="25dp" />
 
 </LinearLayout>

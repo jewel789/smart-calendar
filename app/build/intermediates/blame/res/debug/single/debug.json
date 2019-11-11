@@ -1768,10 +1768,6 @@
         "source": "C:\\Users\\Rohan\\.gradle\\caches\\transforms-2\\files-2.1\\f8ccfb448ba3545203b2c9319e236e39\\appcompat-1.1.0\\res\\drawable-hdpi-v4\\abc_list_divider_mtrl_alpha.9.png"
     },
     {
-        "merged": "C:\\Users\\Rohan\\Desktop\\app dev\\smart-calendar\\app\\build\\intermediates\\res\\merged\\debug\\drawable_calendar1.jpg.flat",
-        "source": "C:\\Users\\Rohan\\Desktop\\app dev\\smart-calendar\\app\\src\\main\\res\\drawable\\calendar1.jpg"
-    },
-    {
         "merged": "C:\\Users\\Rohan\\Desktop\\app dev\\smart-calendar\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_btn_colored_text_material.xml.flat",
         "source": "C:\\Users\\Rohan\\.gradle\\caches\\transforms-2\\files-2.1\\f8ccfb448ba3545203b2c9319e236e39\\appcompat-1.1.0\\res\\color\\abc_btn_colored_text_material.xml"
     },

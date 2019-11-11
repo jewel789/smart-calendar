@@ -683,7 +683,6 @@ drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
 drawable button
-drawable calendar1
 drawable calendar2
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
@@ -740,7 +739,6 @@ id FUNCTION
 id META
 id SHIFT
 id SYM
-id SignUpPage
 id TaskAddPage
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
@@ -937,7 +935,6 @@ id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
 id taskName
-id taskNameEnter
 id tasksBar
 id text
 id text2
@@ -1097,6 +1094,7 @@ string sign_up
 string sign_up_page
 string status_bar_notification_info_overflow
 string task
+string tvTaskId
 string yellow
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light

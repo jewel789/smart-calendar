@@ -10,7 +10,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -22,7 +21,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
@@ -36,7 +34,7 @@ public class TaskAddActivity extends AppCompatActivity implements View.OnClickLi
 
     private EditText taskName;
     private Button addTaskButton;
-    private TextView datePick, timePick;
+    private Button datePick, timePick;
 
     private Account account;
 
