@@ -14,6 +14,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -70,11 +71,15 @@ public class ShowTasksActivity extends AppCompatActivity {
 
     void updateDB() {
         ArrayList <Task> allTasks = account.getAllTasks();
+
         Collections.sort(allTasks, new dateCmp());
-        for(int i = 0; i < allTasks.size(); i++) {
+        int i;
+        for(i = 0; i < allTasks.size(); i++) {
             databaseReference.child(firebaseUser.getUid()).child("tasks/task" + (i + 1)).setValue(allTasks.get(i));
         }
         databaseReference.child(firebaseUser.getUid()).child("taskCount").setValue(account.getTaskCount());
+
+        databaseReference.child(firebaseUser.getUid()).child("tasks/task"+ (i+1)).setValue(null);
 
         Toast.makeText(this, "Task Deleted & saved", Toast.LENGTH_LONG).show();
     }

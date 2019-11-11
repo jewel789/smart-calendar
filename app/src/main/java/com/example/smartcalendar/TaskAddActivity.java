@@ -137,6 +137,7 @@ public class TaskAddActivity extends AppCompatActivity implements View.OnClickLi
 
 
     void updateDB() {
+
         ArrayList <Task> allTasks = account.getAllTasks();
         Collections.sort(allTasks, new dateCmp());
         for(int i = 0; i < allTasks.size(); i++) {
