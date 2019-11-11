@@ -25,27 +25,30 @@
         android:layout_width="322dp"
         android:layout_height="360dp"
         android:layout_marginStart="45dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="44dp" />
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="44dp"
+        android:background="@drawable/button"/>
 
 
     <EditText
         android:id="@+id/deleteTaskNo"
         android:layout_width="match_parent"
-        android:layout_height="53dp"
+        android:layout_height="45dp"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="30dp"
         android:layout_marginRight="30dp"
+        android:background="@drawable/edit_text_middle"
         android:hint="Enter task No to delete "
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        />
 
     <Button
         android:id="@+id/deleteDoneButton"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginRight="30dp"
         android:text="Delete"
         android:textAlignment="center" />
 

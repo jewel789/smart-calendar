@@ -1,70 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AccountActivity">
+    tools:context=".AccountActivity"
+    android:orientation="vertical"
+    android:background="@drawable/bg">
 
     <TextView
-        android:id="@+id/enterAccountName"
-        android:layout_width="100dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="108dp"
-        android:fontFamily="serif"
-        android:text="@string/enter_name"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toStartOf="@+id/accountName"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginRight="25dp"
+        android:gravity="center_horizontal"
+        android:text="Enter Following Information"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <EditText
         android:id="@+id/accountName"
-        android:layout_width="155dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="92dp"
-        android:layout_marginEnd="56dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginRight="25dp"
+        android:background="@drawable/edit_text_top"
         android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/enterAccountAge"
-        android:layout_width="101dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="84dp"
-        android:fontFamily="serif"
-        android:text="@string/enter_age"
-        app:layout_constraintEnd_toStartOf="@+id/accountAge"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/enterAccountName" />
+        android:hint="Enter your name"
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/accountAge"
-        android:layout_width="155dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="73dp"
-        android:layout_marginEnd="56dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginRight="25dp"
+        android:background="@drawable/edit_text_bottom"
         android:ems="10"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/accountName" />
+        android:hint="Enter your age"
+        android:inputType="number" />
 
     <Button
         android:id="@+id/accountContinue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="162dp"
-        android:layout_marginEnd="156dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="25dp"
         android:layout_marginBottom="200dp"
+        android:background="@drawable/button"
         android:text="@string/accountContinue"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:textStyle="bold" />
+</LinearLayout>

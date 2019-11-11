@@ -96,6 +96,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginRight="25dp"
         android:layout_marginBottom="0dp"
+        android:background="@drawable/button"
         android:drawableStart="@drawable/enter_button_icon"
         android:text="@string/sign_up" />
 
