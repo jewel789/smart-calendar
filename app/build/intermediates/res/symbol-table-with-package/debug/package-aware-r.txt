@@ -833,8 +833,6 @@ id direct
 id disableHome
 id edit_query
 id end
-id enterAccountAge
-id enterAccountName
 id expand_activities_button
 id expanded_menu
 id forever
