@@ -9,6 +9,7 @@ import java.util.Locale;
 public class Task implements Serializable {
     private String name;
     private Date date;
+    private boolean alarm;
 
     public Task(){
 
@@ -36,5 +37,13 @@ public class Task implements Serializable {
         SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy  hh:mm a", Locale.getDefault());
         now += sdf.format(this.date) + " - "  + this.name + '\n';
         return now;
+    }
+
+    public boolean isAlarm() {
+        return alarm;
+    }
+
+    public void setAlarm(boolean alarm) {
+        this.alarm = alarm;
     }
 }

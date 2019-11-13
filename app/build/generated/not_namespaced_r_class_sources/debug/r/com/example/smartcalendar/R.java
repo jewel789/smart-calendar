@@ -3199,7 +3199,7 @@ public final class R {
     public static final int addTaskButton=0x7f070041;
     public static final int adjust_height=0x7f070042;
     public static final int adjust_width=0x7f070043;
-    public static final int alarmSwitsch=0x7f070044;
+    public static final int alarmSwitch=0x7f070044;
     public static final int alertTitle=0x7f070045;
     public static final int allTaskMessage=0x7f070046;
     public static final int allTasks=0x7f070047;

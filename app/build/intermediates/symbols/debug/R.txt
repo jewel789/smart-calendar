@@ -799,7 +799,7 @@ int id addTask 0x7f070040
 int id addTaskButton 0x7f070041
 int id adjust_height 0x7f070042
 int id adjust_width 0x7f070043
-int id alarmSwitsch 0x7f070044
+int id alarmSwitch 0x7f070044
 int id alertTitle 0x7f070045
 int id allTaskMessage 0x7f070046
 int id allTasks 0x7f070047

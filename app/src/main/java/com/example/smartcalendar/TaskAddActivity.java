@@ -2,14 +2,19 @@ package com.example.smartcalendar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlarmManager;
 import android.app.DatePickerDialog;
+import android.app.PendingIntent;
 import android.app.TimePickerDialog;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -21,6 +26,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
@@ -35,7 +41,7 @@ public class TaskAddActivity extends AppCompatActivity implements View.OnClickLi
     private EditText taskName;
     private Button addTaskButton;
     private Button datePick, timePick;
-
+    private Switch aSwitch;
     private Account account;
 
     private StringBuilder timeT = new StringBuilder();
@@ -56,6 +62,8 @@ public class TaskAddActivity extends AppCompatActivity implements View.OnClickLi
         addTaskButton = findViewById(R.id.addTaskButton);
         timePick = findViewById((R.id.pickTime));
         datePick = findViewById(R.id.pickDate);
+        aSwitch = findViewById(R.id.alarmSwitch);
+
 
         timePick.setOnClickListener(this);
         datePick.setOnClickListener(this);
@@ -109,7 +117,6 @@ public class TaskAddActivity extends AppCompatActivity implements View.OnClickLi
                         }
                     }, SelectedYear, SelectedMonth, SelectedDay);
 
-
             datePickerDialog.show();
         }
 
@@ -128,7 +135,22 @@ public class TaskAddActivity extends AppCompatActivity implements View.OnClickLi
                 }
                 Task task = new Task(name, date);
 
+                task.setAlarm(aSwitch.isChecked());//alarm
                 account.addTask(task);
+
+                if(aSwitch.isChecked()){
+                    Calendar calendar = Calendar.getInstance();
+                    calendar.set(Calendar.HOUR_OF_DAY, task.getDate().getHours());
+                    calendar.set(Calendar.MINUTE, task.getDate().getMinutes());
+                    calendar.set(Calendar.SECOND, 0);
+
+                    Intent intent = new Intent(getApplicationContext(), AlarmReceiver.class);
+                    PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, intent, 0);
+                    AlarmManager alarmManager  = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+                    if(alarmManager != null) {
+                        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
+                    }
+                }
 
                 updateDB();
             }
@@ -145,7 +167,7 @@ public class TaskAddActivity extends AppCompatActivity implements View.OnClickLi
         }
         databaseReference.child(user.getUid()).child("taskCount").setValue(account.getTaskCount());
 
-        Toast.makeText(this, "Task added & saved", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Task added & saved", Toast.LENGTH_SHORT).show();
         finish();
     }
 }

@@ -800,7 +800,7 @@ id addTask
 id addTaskButton
 id adjust_height
 id adjust_width
-id alarmSwitsch
+id alarmSwitch
 id alertTitle
 id allTaskMessage
 id allTasks

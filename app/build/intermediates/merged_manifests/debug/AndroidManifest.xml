@@ -36,6 +36,11 @@
             </intent-filter>
         </activity>
 
+        <receiver
+            android:name="com.example.smartcalendar.AlarmReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
         <service
             android:name="com.google.firebase.components.ComponentDiscoveryService"
             android:directBootAware="true"
