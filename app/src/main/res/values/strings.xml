@@ -40,5 +40,6 @@
     <string name="task_name">Task Name :</string>
     <string name="task_name_search">Task Name :</string>
     <string name="search">Search</string>
+    <string name="sign_in_page">SIGN IN</string>
 
 </resources>

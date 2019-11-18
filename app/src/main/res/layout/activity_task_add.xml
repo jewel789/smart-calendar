@@ -50,35 +50,35 @@
         android:id="@+id/pickTime"
         android:layout_width="131dp"
         android:layout_height="21dp"
-        android:layout_marginTop="268dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="284dp"
         android:clickable="true"
+        android:focusable="true"
         android:text="@string/pick_time"
         android:textAlignment="center"
-        app:layout_constraintEnd_toStartOf="@+id/pickDate"
-        app:layout_constraintHorizontal_bias="0.929"
-        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:focusable="true" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/pickDate"
         android:layout_width="138dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="284dp"
         android:clickable="true"
+        android:focusable="true"
         android:text="@string/pick_date"
         android:textAlignment="center"
-        app:layout_constraintBaseline_toBaselineOf="@+id/pickTime"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.448"
         app:layout_constraintStart_toEndOf="@+id/pickTime"
-        android:focusable="true" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Switch
         android:id="@+id/alarmSwitch"
         android:layout_width="70dp"
         android:layout_height="49dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="128dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="168dp"
         android:drawableStart="@drawable/alarm_icon"
 
         app:layout_constraintEnd_toEndOf="parent"

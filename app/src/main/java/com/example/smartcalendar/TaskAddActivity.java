@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -42,8 +43,10 @@ public class TaskAddActivity extends AppCompatActivity implements View.OnClickLi
 
     private EditText taskName;
     private Button addTaskButton;
-    private Button datePick, timePick;
+    private TextView datePick, timePick;
+
     private Switch aSwitch;
+
     private Account account;
 
     private StringBuilder timeT = new StringBuilder();
@@ -62,7 +65,7 @@ public class TaskAddActivity extends AppCompatActivity implements View.OnClickLi
 
         taskName = findViewById(R.id.taskName);
         addTaskButton = findViewById(R.id.saveTaskButton);
-        timePick = findViewById((R.id.pickTime));
+        timePick = findViewById(R.id.pickTime);
         datePick = findViewById(R.id.pickDate);
         aSwitch = findViewById(R.id.alarmSwitch);
 
@@ -128,6 +131,7 @@ public class TaskAddActivity extends AppCompatActivity implements View.OnClickLi
             String name = taskName.getText().toString().trim();
             timeString = timeT.toString();
             dateString = dateT.toString();
+
             if(!TextUtils.isEmpty(name) && !TextUtils.isEmpty(dateString) && !TextUtils.isEmpty(timeString)) {
 
                 SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm", Locale.getDefault());
@@ -139,14 +143,12 @@ public class TaskAddActivity extends AppCompatActivity implements View.OnClickLi
                 }
                 Task task = new Task(name, date);
 
-                task.setAlarm(aSwitch.isChecked());//alarm
+                task.setAlarm(aSwitch.isChecked());     //alarm
                 account.addTask(task);
 
                 if(aSwitch.isChecked()){
                     Calendar calendar = Calendar.getInstance();
-                    calendar.set(Calendar.HOUR_OF_DAY, task.getDate().getHours());
-                    calendar.set(Calendar.MINUTE, task.getDate().getMinutes());
-                    calendar.set(Calendar.SECOND, 0);
+                    calendar.setTime(task.getDate());
 
                     Intent intent = new Intent(getApplicationContext(), AlarmReceiver.class);
                     PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, intent, 0);
@@ -156,18 +158,10 @@ public class TaskAddActivity extends AppCompatActivity implements View.OnClickLi
                     }
                 }
 
-		databaseReference.child(user.getUid()).setValue(account);
+		        databaseReference.child(user.getUid()).setValue(account);
                 Toast.makeText(this, "Task Added Successfully", Toast.LENGTH_SHORT).show();
-		finish();
+		        finish();
             }
         }
-    }
-}
-
-class dateCmp implements Comparator <Task> {
-
-    @Override
-    public int compare(Task t1, Task t2) {
-        return t1.getDate().compareTo(t2.getDate());
     }
 }
