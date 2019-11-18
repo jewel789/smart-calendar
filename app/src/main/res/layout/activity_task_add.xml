@@ -1,84 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg"
-    tools:context=".TaskAddActivity"
-    android:orientation="vertical">
+    tools:context=".TaskAddActivity">
 
     <TextView
         android:id="@+id/TaskAddPage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="30dp"
+        android:layout_marginStart="144dp"
+        android:layout_marginEnd="144dp"
+        android:layout_marginTop="40dp"
         android:text="@string/add_task_page"
-        android:textAllCaps="true"
-        android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/taskNameEnter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="168dp"
+        android:layout_marginEnd="1dp"
+        android:text="@string/enter_task_name"
+        app:layout_constraintEnd_toStartOf="@+id/taskName"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/taskName"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginRight="20dp"
-        android:background="@drawable/edit_text_middle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        app:layout_constraintBaseline_toBaselineOf="@+id/taskNameEnter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/taskNameEnter"
+        tools:ignore="LabelFor" />
 
-    <Button
+    <TextView
         android:id="@+id/pickTime"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="20dp"
-        android:text="pick time"
-        android:background="@drawable/button"
+        android:layout_width="131dp"
+        android:layout_height="21dp"
+        android:layout_marginTop="268dp"
+        android:clickable="true"
+        android:text="@string/pick_time"
         android:textAlignment="center"
-        android:textAllCaps="true"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        app:layout_constraintEnd_toStartOf="@+id/pickDate"
+        app:layout_constraintHorizontal_bias="0.929"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:focusable="true" />
 
-    <Button
+    <TextView
         android:id="@+id/pickDate"
-        android:layout_width="match_parent"
+        android:layout_width="138dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="20dp"
-        android:text="pick Date"
-        android:background="@drawable/button"
+        android:clickable="true"
+        android:text="@string/pick_date"
         android:textAlignment="center"
-        android:textAllCaps="true"
-        android:textSize="20sp"
-        android:textStyle="bold" />
-
+        app:layout_constraintBaseline_toBaselineOf="@+id/pickTime"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/pickTime"
+        android:focusable="true" />
 
     <Switch
         android:id="@+id/alarmSwitch"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="20dp"
-        android:drawableLeft="@drawable/alarm_icon" />
+        android:layout_width="70dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="128dp"
+        android:drawableStart="@drawable/alarm_icon"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/pickDate" />
 
     <Button
-        android:id="@+id/addTaskButton"
-        android:layout_width="match_parent"
+        android:id="@+id/saveTaskButton"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="20dp"
-        android:textStyle="bold"
-        android:background="@drawable/button"
-        android:text="@string/add" />
+        android:layout_marginStart="160dp"
+        android:layout_marginEnd="160dp"
+        android:layout_marginBottom="151dp"
+        android:text="@string/add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
