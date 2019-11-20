@@ -11,6 +11,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.Switch;
 import android.widget.TimePicker;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -35,9 +36,7 @@ public class EditTaskActivity extends AppCompatActivity implements View.OnClickL
     private Account account;
 
     private TextView taskEditPage;
-    private TextView showTaskName;
-    private TextView showTaskTime;
-
+    private Switch aSwitch;
     private DatabaseReference dbReference;
 
     private EditText reNameTask;
@@ -59,13 +58,11 @@ public class EditTaskActivity extends AppCompatActivity implements View.OnClickL
         task = account.getAllTasks().get(taskPosition);
 
         taskEditPage = findViewById(R.id.taskEditPage);
-        showTaskName = findViewById(R.id.showTaskName);
-        showTaskTime = findViewById(R.id.showTaskTime);
 
         reNameTask = findViewById(R.id.reNameTask);
         rePickTime = findViewById((R.id.rePickTime));
         rePickDate = findViewById(R.id.rePickDate);
-
+        aSwitch = findViewById(R.id.reAlarmSwitch);
         saveTaskButton = findViewById(R.id.saveTaskButton);
         deleteButton = findViewById(R.id.deleteTaskButton);
 
@@ -180,15 +177,17 @@ public class EditTaskActivity extends AppCompatActivity implements View.OnClickL
             Toast.makeText(this, "Task Date & Time Updated", Toast.LENGTH_SHORT).show();
             dbReference.setValue(account);
         }
-
-        showInfo();
+        onBackPressed();
     }
 
     @SuppressLint("SetTextI18n")
     private void showInfo() {
         taskEditPage.setText("Task No #" + (taskPosition + 1));
-        showTaskName.setText("Task Name : " + task.getName());
-        showTaskTime.setText("Task Scheduled at : " + task.getTime());
+        SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy", Locale.getDefault());
+        rePickDate.setText(sdf.format(task.getDate()));
+        sdf = new SimpleDateFormat("hh:mm", Locale.getDefault());
+        rePickTime.setText(sdf.format(task.getDate()));
+        reNameTask.setText(task.getName());
     }
 
     @Override

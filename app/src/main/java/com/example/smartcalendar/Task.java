@@ -8,18 +8,32 @@ import java.util.Date;
 import java.util.Locale;
 
 
-public class Task implements Serializable {
+public class Task implements Serializable{
     private String name;
     private Date date;
     private boolean alarm;
+    private String desc;
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
 
     public Task(){
 
     }
-
     public Task(String name, Date date) {
         this.name = name;
         this.date = date;
+    }
+
+    public Task(String name, Date date, String desc) {
+        this.name = name;
+        this.date = date;
+        this.desc=desc;
     }
 
     public Date getDate() {
@@ -39,6 +53,8 @@ public class Task implements Serializable {
         SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy E hh:mm a", Locale.getDefault());
         return sdf.format(this.date);
     }
+
+
 
     @Exclude
     public String getInfo() {

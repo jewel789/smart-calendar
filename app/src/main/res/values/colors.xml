@@ -9,4 +9,5 @@
     <string name="red">#ff0000</string>
     <string name="purple">#f100ff</string>
     <string name="yellow">#ffff00</string>
+    <color name="colorWhite">#ffffff</color>
 </resources>

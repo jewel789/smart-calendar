@@ -1,124 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TaskAddActivity">
 
-    <TextView
-        android:id="@+id/taskEditPage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="144dp"
-        android:layout_marginEnd="144dp"
-        android:layout_marginTop="40dp"
-        android:text="@string/task_no"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    tools:context=".TaskAddActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/colorPrimaryDark"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/taskEditPage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="@string/task_no"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/reNameTask"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginRight="20dp"
+            android:ems="10"
+            android:hint="Title"
+            android:inputType="textPersonName"
+            android:lines="2"
+            android:maxLength="30"
+            android:maxLines="3" />
+
+
+    </LinearLayout>
 
 
     <EditText
-        android:id="@+id/reNameTask"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="276dp"
+        android:id="@+id/reTaskDesc"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginRight="20dp"
+        android:hint="Description"
+        android:lines="2"
+        android:maxLength="30"
+        android:maxLines="3"
         android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/taskNameReEnter"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/taskNameReEnter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="9dp"
-        android:layout_marginTop="292dp"
-        android:layout_marginEnd="1dp"
-        android:text="@string/new_task_name"
-        app:layout_constraintEnd_toStartOf="@+id/reNameTask"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:inputType="textPersonName" />
 
     <TextView
         android:id="@+id/rePickDate"
-        android:layout_width="135dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="372dp"
-        android:layout_marginEnd="50dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:text="@string/choose_new_date"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/rePickTime"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/button"
+        android:drawableLeft="@drawable/icon_date"
+        android:text="set Date"
+        android:textAlignment="textStart"
+        android:textAllCaps="true"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/rePickTime"
-        android:layout_width="135dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="372dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:text="@string/choose_new_time"
-        android:textAlignment="center"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="20dp"
+        android:text="set time"
+        android:background="@drawable/button"
+        android:textAllCaps="true"
+        android:textSize="20sp"
+        android:drawableLeft="@drawable/icon_time"/>
 
-    <Button
-        android:id="@+id/saveTaskButton"
-        android:layout_width="wrap_content"
+
+
+
+    <Switch
+        android:id="@+id/reAlarmSwitch"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="60dp"
-        android:layout_marginBottom="90dp"
-        android:text="@string/save_task"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="20dp"
+        android:textSize="20sp"
+        android:thumbTint="@color/colorPrimaryDark"
+        android:text="Remind Me"
+        android:drawableLeft="@drawable/ic_alarm_black_24dp" />
 
-    <Button
-        android:id="@+id/deleteTaskButton"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginBottom="90dp"
-        android:text="@string/delete"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/saveTaskButton"
-        app:layout_constraintHorizontal_bias="0.121"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
 
-    <TextView
-        android:id="@+id/showTaskName"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="104dp"
-        android:text="@string/textView"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/saveTaskButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/save_task" />
 
-    <TextView
-        android:id="@+id/showTaskTime"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="@string/textView"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/showTaskName" />
+        <Button
+            android:id="@+id/deleteTaskButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/delete"
+            android:layout_marginLeft="150dp"/>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>
+
+
+
