@@ -79,7 +79,6 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
         while(tasksList.size() > 0) {
             if(tasksList.get(0).getDate().compareTo(date) <= 0) {
                 account.getOldTasks().add(tasksList.get(0));
-                account.delTask();
             }
             else break;
         }
