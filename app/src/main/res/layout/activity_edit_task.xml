@@ -118,8 +118,6 @@
             android:text="@string/delete"
             android:layout_marginLeft="150dp"/>
 
-
-
     </LinearLayout>
 
 

@@ -10,7 +10,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="170dp"
         android:background="@color/colorPrimaryDark">
 
         <EditText
@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="80dp"
             android:layout_marginRight="20dp"
             android:hint="Title"
             android:lines="2"
@@ -35,7 +35,7 @@
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="30dp"
         android:layout_marginRight="20dp"
         android:hint="Description"
         android:lines="2"
@@ -70,8 +70,7 @@
         android:textAllCaps="true"
         android:textSize="20sp"
         android:drawableLeft="@drawable/icon_time"/>
-
-
+    
 
     <Switch
         android:id="@+id/alarmSwitch"
@@ -85,6 +84,42 @@
         android:text="Remind Me"
         android:drawableStart="@drawable/ic_alarm_black_24dp"
         tools:targetApi="lollipop" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp" >
+
+
+        <RadioButton
+            android:id="@+id/radioButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:checked="true"
+            android:text="None"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:checked="false"
+            android:text="Daily"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:checked="false"
+            android:text="Weekly"
+            android:textSize="20sp" />
+    </RadioGroup>
 
     <Button
         android:id="@+id/saveTaskButton"

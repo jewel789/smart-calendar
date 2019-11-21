@@ -107,7 +107,7 @@ public class ShowTasksActivity extends AppCompatActivity implements View.OnClick
             }
         }
 
-        if(tasksList.isEmpty()) Toast.makeText(this, "You have no matching tasks!", Toast.LENGTH_LONG).show();
+        if(tasksInfo.isEmpty()) Toast.makeText(this, "You have no matching tasks!", Toast.LENGTH_SHORT).show();
 
         tasksDisplay(tasksInfo, taskMap);
     }
@@ -126,7 +126,7 @@ public class ShowTasksActivity extends AppCompatActivity implements View.OnClick
             }
         }
 
-        if(tasksList.isEmpty()) Toast.makeText(this, "You have no matching tasks!", Toast.LENGTH_LONG).show();
+        if(tasksInfo.isEmpty()) Toast.makeText(this, "You have no tasks on this day!", Toast.LENGTH_SHORT).show();
 
         tasksDisplay(tasksInfo, taskMap);
     }
