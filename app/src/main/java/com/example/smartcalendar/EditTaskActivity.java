@@ -39,7 +39,7 @@ public class EditTaskActivity extends AppCompatActivity implements View.OnClickL
     private Switch aSwitch;
     private DatabaseReference dbReference;
 
-    private EditText reNameTask;
+    private EditText reNameTask, redesc;
     private Button saveTaskButton;
     private Button deleteButton;
     private TextView rePickDate, rePickTime;
@@ -58,7 +58,7 @@ public class EditTaskActivity extends AppCompatActivity implements View.OnClickL
         task = account.getAllTasks().get(taskPosition);
 
         taskEditPage = findViewById(R.id.taskEditPage);
-
+        redesc = findViewById(R.id.reTaskDesc);
         reNameTask = findViewById(R.id.reNameTask);
         rePickTime = findViewById((R.id.rePickTime));
         rePickDate = findViewById(R.id.rePickDate);
@@ -204,6 +204,7 @@ public class EditTaskActivity extends AppCompatActivity implements View.OnClickL
         rePickTime.setText(sdf.format(task.getDate()));
         reNameTask.setText(task.getName());
         aSwitch.setChecked(task.isAlarm());
+        redesc.setText(task.getDesc());
     }
 
     @Override

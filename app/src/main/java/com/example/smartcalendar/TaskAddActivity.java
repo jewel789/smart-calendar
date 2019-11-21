@@ -42,6 +42,7 @@ public class TaskAddActivity extends AppCompatActivity implements View.OnClickLi
     private DatabaseReference databaseReference;
 
     private EditText taskName;
+    private EditText desc;
     private Button addTaskButton;
     private TextView datePick, timePick;
 
@@ -68,7 +69,7 @@ public class TaskAddActivity extends AppCompatActivity implements View.OnClickLi
         timePick = findViewById(R.id.pickTime);
         datePick = findViewById(R.id.pickDate);
         aSwitch = findViewById(R.id.alarmSwitch);
-
+        desc = findViewById(R.id.taskDesc);
 
         timePick.setOnClickListener(this);
         datePick.setOnClickListener(this);
@@ -129,6 +130,7 @@ public class TaskAddActivity extends AppCompatActivity implements View.OnClickLi
 
         if(view == addTaskButton) {
             String name = taskName.getText().toString().trim();
+            String des = desc.getText().toString().trim();
             timeString = timeT.toString();
             dateString = dateT.toString();
 
@@ -141,7 +143,7 @@ public class TaskAddActivity extends AppCompatActivity implements View.OnClickLi
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
-                Task task = new Task(name, date);
+                Task task = new Task(name, date, des);
 
                 task.setAlarm(aSwitch.isChecked());     //alarm
                 account.addTask(task);
