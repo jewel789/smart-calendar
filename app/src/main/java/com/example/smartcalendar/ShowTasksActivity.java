@@ -2,6 +2,10 @@ package com.example.smartcalendar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -19,6 +23,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
@@ -35,6 +40,8 @@ public class ShowTasksActivity extends AppCompatActivity implements View.OnClick
 
     private Button searchButton;
     private EditText searchBox;
+
+    public static final long HOUR = 3600*1000;
 
     private ArrayList <Task> tasksList;
 
@@ -71,7 +78,21 @@ public class ShowTasksActivity extends AppCompatActivity implements View.OnClick
 
         while(tasksList.size() > 0) {
             if(tasksList.get(0).getDate().compareTo(date) <= 0) {
+
                 account.getOldTasks().add(tasksList.get(0));
+                Task task = account.getAllTasks().get(0);
+                if (!task.getRepeat().equals("None")) {
+                    Date newDate = null;
+                    if (task.getRepeat().equals("Daily"))
+                        newDate = new Date(task.getDate().getTime() + 5 * 24 * HOUR);
+                    else if (task.getRepeat().equals("Weekly"))
+                        newDate = new Date(task.getDate().getTime() + 5 * 24 * 7 * HOUR);
+
+                    Task newTask = new Task(task.getName(), newDate, task.getRepeat());
+                    account.addTask(newTask);
+                    setAlarm(newTask);
+                    Collections.sort(tasksList, new dateCmp());
+                }
                 account.delTask();
             }
             else break;
@@ -81,7 +102,7 @@ public class ShowTasksActivity extends AppCompatActivity implements View.OnClick
     }
 
     private void findAllTasks() {
-        //clearOldTasks();
+        clearOldTasks();
         tasksList = account.getAllTasks();
         ArrayList <String> tasksInfo = new ArrayList<>();
         ArrayList <Integer> taskMap = new ArrayList<>();
@@ -97,7 +118,7 @@ public class ShowTasksActivity extends AppCompatActivity implements View.OnClick
     }
 
     private void findMatchingTasks(CharSequence str) {
-        //clearOldTasks();
+        clearOldTasks();
         ArrayList <String> tasksInfo = new ArrayList<>();
         ArrayList <Integer> taskMap = new ArrayList<>();
 
@@ -109,7 +130,7 @@ public class ShowTasksActivity extends AppCompatActivity implements View.OnClick
             }
         }
 
-        if(tasksList.isEmpty()) Toast.makeText(this, "You have no matching tasks!", Toast.LENGTH_LONG).show();
+        if(tasksInfo.isEmpty()) Toast.makeText(this, "You have no matching tasks!", Toast.LENGTH_SHORT).show();
 
         tasksDisplay(tasksInfo, taskMap);
     }
@@ -128,7 +149,7 @@ public class ShowTasksActivity extends AppCompatActivity implements View.OnClick
             }
         }
 
-        if(tasksList.isEmpty()) Toast.makeText(this, "You have no matching tasks!", Toast.LENGTH_LONG).show();
+        if(tasksInfo.isEmpty()) Toast.makeText(this, "You have no tasks on this day!", Toast.LENGTH_SHORT).show();
 
         tasksDisplay(tasksInfo, taskMap);
     }
@@ -159,6 +180,21 @@ public class ShowTasksActivity extends AppCompatActivity implements View.OnClick
             }
             else {
                 findAllTasks();
+            }
+        }
+    }
+
+    @SuppressLint("NewApi")
+    private void setAlarm(Task task) {
+        if(task.isAlarm()){
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTime(task.getDate());
+
+            Intent intent = new Intent(getApplicationContext(), AlarmReceiver.class);
+            PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, intent, PendingIntent.FLAG_CANCEL_CURRENT);
+            AlarmManager alarmManager  = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+            if(alarmManager != null) {
+                alarmManager.setExact(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
             }
         }
     }

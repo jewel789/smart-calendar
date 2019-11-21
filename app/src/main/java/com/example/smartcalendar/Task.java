@@ -13,27 +13,22 @@ public class Task implements Serializable{
     private Date date;
     private boolean alarm;
     private String desc;
-    private int repeat;
+    private String repeat;
 
     public Task(){
 
     }
 
-    public Task(String name, Date date) {
-        this.name = name;
-        this.date = date;
-        this.repeat = 0;
-    }
-
-    public Task(String name, Date date, int repeat) {
+    public Task(String name, Date date, String repeat) {
         this.name = name;
         this.date = date;
         this.repeat = repeat;
     }
 
-    public Task(String name, Date date, String desc) {
+    public Task(String name, Date date, String repeat, String desc) {
         this.name = name;
         this.date = date;
+        this.repeat = repeat;
         this.desc = desc;
     }
 
@@ -77,5 +72,13 @@ public class Task implements Serializable{
 
     public void setAlarm(boolean alarm) {
         this.alarm = alarm;
+    }
+
+    public String getRepeat() {
+        return repeat;
+    }
+
+    public void setRepeat(String repeat) {
+        this.repeat = repeat;
     }
 }

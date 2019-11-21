@@ -2,6 +2,7 @@ package com.example.smartcalendar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.app.AlarmManager;
 import android.app.DatePickerDialog;
 import android.app.PendingIntent;
@@ -10,10 +11,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.text.format.DateUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.TimePicker;
@@ -48,10 +52,14 @@ public class TaskAddActivity extends AppCompatActivity implements View.OnClickLi
 
     private Switch aSwitch;
 
+    private RadioGroup radioGroup;
+
     private Account account;
 
     private StringBuilder timeT = new StringBuilder();
     private StringBuilder dateT = new StringBuilder();
+
+    public static final long HOUR = 3600*1000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +77,7 @@ public class TaskAddActivity extends AppCompatActivity implements View.OnClickLi
         timePick = findViewById(R.id.pickTime);
         datePick = findViewById(R.id.pickDate);
         aSwitch = findViewById(R.id.alarmSwitch);
+        radioGroup = findViewById(R.id.radioGroup);
         desc = findViewById(R.id.taskDesc);
 
         timePick.setOnClickListener(this);
@@ -133,6 +142,7 @@ public class TaskAddActivity extends AppCompatActivity implements View.OnClickLi
             String des = desc.getText().toString().trim();
             timeString = timeT.toString();
             dateString = dateT.toString();
+            RadioButton radioButton = findViewById(radioGroup.getCheckedRadioButtonId());
 
             if(!TextUtils.isEmpty(name) && !TextUtils.isEmpty(dateString) && !TextUtils.isEmpty(timeString)) {
 
@@ -143,26 +153,43 @@ public class TaskAddActivity extends AppCompatActivity implements View.OnClickLi
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
-                Task task = new Task(name, date, des);
+
+                Task task = new Task(name, date, radioButton.getText().toString(), des);
 
                 task.setAlarm(aSwitch.isChecked());     //alarm
                 account.addTask(task);
-
-                if(aSwitch.isChecked()){
-                    Calendar calendar = Calendar.getInstance();
-                    calendar.setTime(task.getDate());
-
-                    Intent intent = new Intent(getApplicationContext(), AlarmReceiver.class);
-                    PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, intent, PendingIntent.FLAG_CANCEL_CURRENT);
-                    AlarmManager alarmManager  = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-                    if(alarmManager != null) {
-                        alarmManager.setExact(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
+                setAlarm(task);
+                for(int i = 1; i < 5; i++) {
+                    if (!task.getRepeat().equals("None")) {
+                        Date newDate = null;
+                        if (task.getRepeat().equals("Daily"))
+                            newDate = new Date(task.getDate().getTime() + i * 24 * HOUR);
+                        else if (task.getRepeat().equals("Weekly"))
+                            newDate = new Date(task.getDate().getTime() + i * 24 * 7 * HOUR);
+                        Task newTask = new Task(task.getName(), newDate, task.getRepeat());
+                        account.addTask(newTask);
+                        setAlarm(newTask);
                     }
                 }
 
 		        databaseReference.child(user.getUid()).setValue(account);
                 Toast.makeText(this, "Task Added Successfully", Toast.LENGTH_SHORT).show();
 		        finish();
+            }
+        }
+    }
+
+    @SuppressLint("NewApi")
+    private void setAlarm(Task task) {
+        if(task.isAlarm()){
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTime(task.getDate());
+
+            Intent intent = new Intent(getApplicationContext(), AlarmReceiver.class);
+            PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, intent, PendingIntent.FLAG_CANCEL_CURRENT);
+            AlarmManager alarmManager  = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+            if(alarmManager != null) {
+                alarmManager.setExact(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
             }
         }
     }
