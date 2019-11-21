@@ -24,11 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginLeft="25dp"
-<<<<<<< HEAD
         android:layout_marginTop="100dp"
-=======
-        android:layout_marginTop="130dp"
->>>>>>> 5126ebc6faea35d7b91175833cfca3658f261fc5
         android:layout_marginRight="25dp"
         android:background="@drawable/edit_text_top"
         android:ems="10"
