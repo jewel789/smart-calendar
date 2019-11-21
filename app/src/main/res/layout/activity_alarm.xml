@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#455A64">
+
+
+    <DigitalClock
+        android:id="@+id/simpleDigitalClock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        android:padding="2dp"
+        android:textSize="40sp" />
+
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginTop="30dp"
+        android:text="It's time to wake up!"
+        android:gravity="start|top"
+        android:textAlignment="center"
+        android:inputType="textMultiLine"
+        android:textStyle="bold"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+    <com.agik.AGIKSwipeButton.View.Swipe_Button_View
+        android:id="@+id/start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="330dp"
+        app:sb_swipe_text="Swipe Right To Stop"
+        app:sb_swipe_animate_text="true"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        />
+
+
+</LinearLayout>
