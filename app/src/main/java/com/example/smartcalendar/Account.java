@@ -8,6 +8,15 @@ public class Account implements Serializable {
     private int age;
 
     private ArrayList <Task> allTasks = new ArrayList<>();
+    private ArrayList<Task> oldTasks = new ArrayList<>();
+
+    public ArrayList<Task> getOldTasks() {
+        return oldTasks;
+    }
+
+    public void setOldTasks(ArrayList<Task> oldTasks) {
+        this.oldTasks = oldTasks;
+    }
 
     public Account() {}
 

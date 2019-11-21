@@ -3,8 +3,11 @@ package com.example.smartcalendar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.app.AlarmManager;
 import android.app.DatePickerDialog;
+import android.app.PendingIntent;
 import android.app.TimePickerDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -24,6 +27,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
 import java.util.Locale;
@@ -190,8 +194,30 @@ public class EditTaskActivity extends AppCompatActivity implements View.OnClickL
             }
 
             Toast.makeText(this, "Task Date & Time Updated", Toast.LENGTH_SHORT).show();
-            dbReference.setValue(account);
+
         }
+        task.setDesc(redesc.getText().toString().trim());
+        if(aSwitch.isChecked()){
+            if(!task.isAlarm()){
+                Calendar calendar = Calendar.getInstance();
+                calendar.setTime(task.getDate());
+
+                Intent intent = new Intent(getApplicationContext(), AlarmReceiver.class);
+                PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, intent, PendingIntent.FLAG_CANCEL_CURRENT);
+                AlarmManager alarmManager  = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+                if(alarmManager != null) {
+                    alarmManager.setExact(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
+                }
+            }
+            task.setAlarm(true);
+        }
+        else {
+            Intent intent = new Intent(getApplicationContext(), AlarmReceiver.class);
+            PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, intent, PendingIntent.FLAG_CANCEL_CURRENT);
+            AlarmManager alarmManager  = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+            alarmManager.cancel(pendingIntent);
+        }
+        dbReference.setValue(account);
         onBackPressed();
     }
 

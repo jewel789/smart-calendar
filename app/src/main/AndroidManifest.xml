@@ -12,6 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".OldTask"></activity>
         <activity android:name=".ActivityAlarm" />
         <activity android:name=".EditTaskActivity" />
         <activity android:name=".ShowTasksActivity" />

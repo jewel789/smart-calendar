@@ -71,6 +71,7 @@ public class ShowTasksActivity extends AppCompatActivity implements View.OnClick
 
         while(tasksList.size() > 0) {
             if(tasksList.get(0).getDate().compareTo(date) <= 0) {
+                account.getOldTasks().add(tasksList.get(0));
                 account.delTask();
             }
             else break;
@@ -114,7 +115,7 @@ public class ShowTasksActivity extends AppCompatActivity implements View.OnClick
     }
 
     private void findDatedTasks(Date date) {
-        clearOldTasks();
+        //clearOldTasks();
         ArrayList <String> tasksInfo = new ArrayList<>();
         ArrayList <Integer> taskMap = new ArrayList<>();
 
