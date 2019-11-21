@@ -13,27 +13,28 @@ public class Task implements Serializable{
     private Date date;
     private boolean alarm;
     private String desc;
-
-    public String getDesc() {
-        return desc;
-    }
-
-    public void setDesc(String desc) {
-        this.desc = desc;
-    }
+    private int repeat;
 
     public Task(){
 
     }
+
     public Task(String name, Date date) {
         this.name = name;
         this.date = date;
+        this.repeat = 0;
+    }
+
+    public Task(String name, Date date, int repeat) {
+        this.name = name;
+        this.date = date;
+        this.repeat = repeat;
     }
 
     public Task(String name, Date date, String desc) {
         this.name = name;
         this.date = date;
-        this.desc=desc;
+        this.desc = desc;
     }
 
     public Date getDate() {
@@ -54,7 +55,13 @@ public class Task implements Serializable{
         return sdf.format(this.date);
     }
 
+    public String getDesc() {
+        return desc;
+    }
 
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
 
     @Exclude
     public String getInfo() {

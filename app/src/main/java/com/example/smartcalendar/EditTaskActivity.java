@@ -127,6 +127,8 @@ public class EditTaskActivity extends AppCompatActivity implements View.OnClickL
         int SelectedMonth = datePicker.getMonth();
         int SelectedYear = datePicker.getYear();
 
+        dateT = new StringBuilder();
+
         DatePickerDialog datePickerDialog = new DatePickerDialog(this,
 
                 new DatePickerDialog.OnDateSetListener() {
@@ -153,20 +155,32 @@ public class EditTaskActivity extends AppCompatActivity implements View.OnClickL
         String timeString = timeT.toString();
         String dateString = dateT.toString();
 
-        if(!TextUtils.isEmpty(name)) {
+        if(!TextUtils.isEmpty(name) && !name.equals(task.getName())) {
             task.setName(name);
             Toast.makeText(this, "Task Name Updated", Toast.LENGTH_SHORT).show();
             dbReference.setValue(account);
         }
 
-        if(!TextUtils.isEmpty(dateString) && !TextUtils.isEmpty(timeString)) {
-            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm", Locale.getDefault());
+        if(!TextUtils.isEmpty(dateString) || !TextUtils.isEmpty(timeString)) {
+            SimpleDateFormat sdf;
+
+            if(TextUtils.isEmpty(dateString)) {
+                sdf = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+                dateString = sdf.format(task.getDate());
+            }
+            if(TextUtils.isEmpty(timeString)) {
+                sdf = new SimpleDateFormat("hh:mm", Locale.getDefault());
+                timeString = sdf.format(task.getDate());
+            }
+
+            sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm", Locale.getDefault());
             Date date = null;
             try {
                 date = sdf.parse(dateString + " " + timeString);
             } catch (ParseException e) {
                 e.printStackTrace();
             }
+
             task.setDate(date);
             Collections.sort(account.getAllTasks(), new dateCmp());
             for(int i = 0; i < account.getAllTasks().size(); i++) {
@@ -174,6 +188,7 @@ public class EditTaskActivity extends AppCompatActivity implements View.OnClickL
                     taskPosition = i;
                 }
             }
+
             Toast.makeText(this, "Task Date & Time Updated", Toast.LENGTH_SHORT).show();
             dbReference.setValue(account);
         }
@@ -183,9 +198,9 @@ public class EditTaskActivity extends AppCompatActivity implements View.OnClickL
     @SuppressLint("SetTextI18n")
     private void showInfo() {
         taskEditPage.setText("Task No #" + (taskPosition + 1));
-        SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy", Locale.getDefault());
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
         rePickDate.setText(sdf.format(task.getDate()));
-        sdf = new SimpleDateFormat("hh:mm", Locale.getDefault());
+        sdf = new SimpleDateFormat("hh:mm a", Locale.getDefault());
         rePickTime.setText(sdf.format(task.getDate()));
         reNameTask.setText(task.getName());
         aSwitch.setChecked(task.isAlarm());

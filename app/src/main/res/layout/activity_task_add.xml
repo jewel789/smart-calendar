@@ -27,8 +27,6 @@
             android:ems="10"
             android:inputType="textPersonName" />
 
-
-
     </LinearLayout>
 
 
@@ -54,7 +52,7 @@
         android:layout_marginTop="30dp"
         android:layout_marginRight="20dp"
         android:background="@drawable/button"
-        android:drawableLeft="@drawable/icon_date"
+        android:drawableStart="@drawable/icon_date"
         android:text="set Date"
         android:textAlignment="textStart"
         android:textAllCaps="true"
@@ -75,7 +73,6 @@
 
 
 
-
     <Switch
         android:id="@+id/alarmSwitch"
         android:layout_width="match_parent"
@@ -86,7 +83,8 @@
         android:textSize="20sp"
         android:thumbTint="@color/colorPrimaryDark"
         android:text="Remind Me"
-        android:drawableLeft="@drawable/ic_alarm_black_24dp" />
+        android:drawableStart="@drawable/ic_alarm_black_24dp"
+        tools:targetApi="lollipop" />
 
     <Button
         android:id="@+id/saveTaskButton"

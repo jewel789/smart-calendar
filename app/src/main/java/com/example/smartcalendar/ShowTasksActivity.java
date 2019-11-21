@@ -24,6 +24,7 @@ import java.util.Comparator;
 import java.util.Date;
 import java.util.Objects;
 
+@SuppressWarnings("ALL")
 public class ShowTasksActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Account account;
@@ -43,6 +44,7 @@ public class ShowTasksActivity extends AppCompatActivity implements View.OnClick
         setContentView(R.layout.activity_show_tasks);
 
         account = (Account) getIntent().getSerializableExtra("account");
+        Date date = (Date) getIntent().getSerializableExtra("date");
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference(Objects.requireNonNull(user).getUid());
@@ -53,7 +55,12 @@ public class ShowTasksActivity extends AppCompatActivity implements View.OnClick
 
         searchButton.setOnClickListener(this);
 
-        findAllTasks();
+        if(date != null) {
+            findDatedTasks(date);
+        }
+        else {
+            findAllTasks();
+        }
     }
 
     private void clearOldTasks() {
@@ -83,7 +90,7 @@ public class ShowTasksActivity extends AppCompatActivity implements View.OnClick
             taskMap.add(i);
         }
 
-        if(tasksList.isEmpty()) Toast.makeText(this, "You have no pending tasks!", Toast.LENGTH_LONG).show();
+        if(tasksList.isEmpty()) Toast.makeText(this, "You have no pending tasks!", Toast.LENGTH_SHORT).show();
 
         tasksDisplay(tasksInfo, taskMap);
     }
@@ -96,6 +103,25 @@ public class ShowTasksActivity extends AppCompatActivity implements View.OnClick
         for(int i = 0; i < tasksList.size(); i++) {
             String name = tasksList.get(i).getName().toLowerCase();
             if(name.contains(str)) {
+                tasksInfo.add("Task " + (i + 1) + " : " + tasksList.get(i).getInfo());
+                taskMap.add(i);
+            }
+        }
+
+        if(tasksList.isEmpty()) Toast.makeText(this, "You have no matching tasks!", Toast.LENGTH_LONG).show();
+
+        tasksDisplay(tasksInfo, taskMap);
+    }
+
+    private void findDatedTasks(Date date) {
+        clearOldTasks();
+        ArrayList <String> tasksInfo = new ArrayList<>();
+        ArrayList <Integer> taskMap = new ArrayList<>();
+
+        for(int i = 0; i < tasksList.size(); i++) {
+            Date taskDate = tasksList.get(i).getDate();
+
+            if(taskDate.getDate() == date.getDate() && taskDate.getMonth() == date.getMonth() && taskDate.getYear() == date.getYear()) {
                 tasksInfo.add("Task " + (i + 1) + " : " + tasksList.get(i).getInfo());
                 taskMap.add(i);
             }

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CalendarView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -18,7 +19,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class CalendarActivity extends AppCompatActivity implements View.OnClickListener {
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
+public class CalendarActivity extends AppCompatActivity implements View.OnClickListener, CalendarView.OnDateChangeListener {
 
     private FirebaseAuth firebaseAuth;
 
@@ -69,6 +75,9 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
         logoutButton.setOnClickListener(this);
         addTaskButton.setOnClickListener(this);
         allTasksButton.setOnClickListener(this);
+
+        CalendarView calendarView = findViewById(R.id.Calendar);
+        calendarView.setOnDateChangeListener(this);
     }
 
     @Override
@@ -95,6 +104,23 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
                 intent.putExtra("account", account);
                 startActivity(intent);
             }
+        }
+    }
+
+    @Override
+    public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+        Date date = null;
+        try {
+            date = sdf.parse(dayOfMonth + "/" + (month + 1) + "/" + year);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        if(!TextUtils.isEmpty(account.getName())) {
+            Intent intent = new Intent(this, ShowTasksActivity.class);
+            intent.putExtra("account", account);
+            intent.putExtra("date", date);
+            startActivity(intent);
         }
     }
 }
