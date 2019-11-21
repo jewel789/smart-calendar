@@ -21,8 +21,6 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Date;
 import java.util.Locale;
 
@@ -33,7 +31,7 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
     private Button logoutButton;
     private Button addTaskButton;
     private Button allTasksButton;
-    private Button delbutton;
+
     private Account account;
 
     @Override
@@ -70,36 +68,16 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
             }
         });
 
-        ArrayList<Task> tasksList;
-        tasksList = account.getAllTasks();
-        Collections.sort(tasksList, new dateCmp());
-
-        Date date = new Date();
-
-        while(tasksList.size() > 0) {
-            if(tasksList.get(0).getDate().compareTo(date) <= 0) {
-                account.getOldTasks().add(tasksList.get(0));
-            }
-            else break;
-        }
-
-        databaseReference.setValue(account);
-
-
         logoutButton = findViewById(R.id.logout);
         addTaskButton = findViewById(R.id.addTask);
         allTasksButton = findViewById(R.id.allTasks);
-        delbutton = findViewById(R.id.delbutton);
 
-        delbutton.setOnClickListener(this);
         logoutButton.setOnClickListener(this);
         addTaskButton.setOnClickListener(this);
         allTasksButton.setOnClickListener(this);
 
         CalendarView calendarView = findViewById(R.id.Calendar);
         calendarView.setOnDateChangeListener(this);
-
-
     }
 
     @Override
@@ -127,14 +105,6 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
                 startActivity(intent);
             }
         }
-
-        if(view == delbutton){
-            if(!TextUtils.isEmpty(account.getName())) {
-                Intent intent = new Intent(this, OldTask.class);
-                intent.putExtra("account", account);
-                startActivity(intent);
-            }
-        }
     }
 
     @Override
@@ -153,5 +123,4 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
             startActivity(intent);
         }
     }
-
 }
