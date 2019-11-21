@@ -57,7 +57,6 @@ public class ShowTasksActivity extends AppCompatActivity implements View.OnClick
 
         if(date != null) {
             findDatedTasks(date);
-            System.out.println(date.getDate() + " " + date.getMonth() + " " + date.getYear());
         }
         else {
             findAllTasks();
@@ -120,7 +119,6 @@ public class ShowTasksActivity extends AppCompatActivity implements View.OnClick
 
         for(int i = 0; i < tasksList.size(); i++) {
             Date taskDate = tasksList.get(i).getDate();
-            System.out.println("tasks " + taskDate.getDate() + " " + taskDate.getMonth() + " " + taskDate.getYear());
 
             if(taskDate.getDate() == date.getDate() && taskDate.getMonth() == date.getMonth() && taskDate.getYear() == date.getYear()) {
                 tasksInfo.add("Task " + (i + 1) + " : " + tasksList.get(i).getInfo());

@@ -68,6 +68,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             return;
         }
 
+        if(password.length() < 6) {
+            Toast.makeText(this, "Password length should at least be 6", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         if(TextUtils.isEmpty(emailAgain)) {
             Toast.makeText(this, "Please repeat your email", Toast.LENGTH_SHORT).show();
             return;
