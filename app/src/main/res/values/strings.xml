@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Smart Calendar</string>
+    <string name="app_name">SmartCalendar</string>
 
     <string name="Day">TODAY</string>
     <string name="Date"> Date : Month : Year </string>
