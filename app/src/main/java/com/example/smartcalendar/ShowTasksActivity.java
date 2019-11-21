@@ -73,7 +73,8 @@ public class ShowTasksActivity extends AppCompatActivity implements View.OnClick
     }
 
     private void findAllTasks() {
-        clearOldTasks();
+        //clearOldTasks();
+        tasksList = account.getAllTasks();
         ArrayList <String> tasksInfo = new ArrayList<>();
         ArrayList <Integer> taskMap = new ArrayList<>();
 
@@ -88,7 +89,7 @@ public class ShowTasksActivity extends AppCompatActivity implements View.OnClick
     }
 
     private void findMatchingTasks(CharSequence str) {
-        clearOldTasks();
+        //clearOldTasks();
         ArrayList <String> tasksInfo = new ArrayList<>();
         ArrayList <Integer> taskMap = new ArrayList<>();
 

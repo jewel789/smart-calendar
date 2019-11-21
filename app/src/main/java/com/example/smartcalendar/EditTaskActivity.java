@@ -188,6 +188,7 @@ public class EditTaskActivity extends AppCompatActivity implements View.OnClickL
         sdf = new SimpleDateFormat("hh:mm", Locale.getDefault());
         rePickTime.setText(sdf.format(task.getDate()));
         reNameTask.setText(task.getName());
+        aSwitch.setChecked(task.isAlarm());
     }
 
     @Override

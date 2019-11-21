@@ -151,10 +151,10 @@ public class TaskAddActivity extends AppCompatActivity implements View.OnClickLi
                     calendar.setTime(task.getDate());
 
                     Intent intent = new Intent(getApplicationContext(), AlarmReceiver.class);
-                    PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, intent, 0);
+                    PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, intent, PendingIntent.FLAG_CANCEL_CURRENT);
                     AlarmManager alarmManager  = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
                     if(alarmManager != null) {
-                        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
+                        alarmManager.setExact(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
                     }
                 }
 
